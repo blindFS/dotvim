@@ -50,6 +50,7 @@
 "-----------------------------------------------------------------
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'tpope/vim-dispatch'
+    NeoBundle 'Valloric/YouCompleteMe'
     NeoBundle 'cmdline-completion'
     NeoBundle 'gtags.vim'
     NeoBundle 'Shougo/vimshell.vim',         {'depends': ['Shougo/vimproc', 'vim-jp/vital.vim']}

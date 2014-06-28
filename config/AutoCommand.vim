@@ -12,6 +12,10 @@
     autocmd FileType vim                       nnoremap <buffer> K :help <CR>
     autocmd FileType vim                       vnoremap <buffer> K <ESC>:execute "help ".GetVisualSelection()<CR>
     autocmd FileType tex                       setlocal noswapfile
+    autocmd FileType haskell                   inoremap <C-h>l <ESC>g_aa<ESC>C<Space>-><Space>
+    autocmd FileType haskell                   inoremap <C-h>h <ESC>g_aa<ESC>C<Space><-<Space>
+    autocmd FileType haskell                   inoremap <C-h>k <ESC>g_aa<ESC>C<Space>::<Space>
+    autocmd FileType haskell                   inoremap <C-h>j <ESC>g_aa<ESC>C<Space>=><Space>
     autocmd Syntax man                         setlocal nomodifiable
 
 " number/relativenumber
