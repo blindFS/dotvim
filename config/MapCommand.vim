@@ -1,5 +1,5 @@
 "-----------------------------------------------------------------
-" cscope
+" reference
 "-----------------------------------------------------------------
     nnoremap <leader>cg :execute 'cscope find g '.expand('<cword>')<CR>
     nnoremap <leader>cs :execute 'cscope find s '.expand('<cword>')<CR>
@@ -20,8 +20,6 @@
     nnoremap gl $
     vnoremap gh ^
     vnoremap gl $
-    vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
-    vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 "-----------------------------------------------------------------
 " add sth to end of line
 "-----------------------------------------------------------------
