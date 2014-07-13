@@ -63,7 +63,7 @@
 "--------------------------------------------------------------------------------------------------------------
     let g:ref_cache_dir       = $HOME.'/tmp/.vim_ref_cache'
     let g:ref_pydoc_cmd       = 'pydoc2'
-    let g:ref_detect_filetype = { 'vimwiki' : 'man', 'markdown' : 'man' }
+    let g:ref_detect_filetype = { 'vimwiki' : 'man', 'markdown' : 'man', 'sh' : 'man'}
 "--------------------------------------------------------------------------------------------------------------
 " plugin - wildfire.vim
 " https://github.com/gcmt/wildfire.vim.git
@@ -262,12 +262,12 @@
 "--------------------------------------------------------------------------------------------------------------
     let g:gist_clip_command              = 'xclip -selection clipboard'
     let g:gist_detect_filetype           = 1
-    let g:gist_open_browser_after_post   = 1
+    let g:gist_open_browser_after_post   = 0
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-preview           preview markdown,html,rdoc in browser
 " https://github.com/greyblake/vim-preview
 "--------------------------------------------------------------------------------------------------------------
-    let g:PreviewBrowsers = 'google-chrome-stable, firefox'
+    let g:PreviewBrowsers = 'firefox, google-chrome-stable'
 "--------------------------------------------------------------------------------------------------------------
 " plugin - sexy_scroller.vim
 " https://github.com/joeytwiddle/sexy_scroller.vim.git

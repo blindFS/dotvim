@@ -50,7 +50,6 @@
 "-----------------------------------------------------------------
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'tpope/vim-dispatch'
-    NeoBundle 'Valloric/YouCompleteMe'
     NeoBundle 'cmdline-completion'
     NeoBundle 'gtags.vim'
     NeoBundle 'Shougo/vimshell.vim',         {'depends': ['Shougo/vimproc', 'vim-jp/vital.vim']}
@@ -58,7 +57,7 @@
     NeoBundle 'Shougo/context_filetype.vim', {'depends': 'Shougo/neocomplete.vim'}
     NeoBundle 'Shougo/neosnippet',           {'depends': 'Shougo/neocomplete.vim'}
     NeoBundle 'Shougo/neosnippet-snippets',  {'depends': 'Shougo/neosnippet'}
-    " NeoBundle 'Valloric/YouCompleteMe',      {'autoload': {'filetypes':['c', 'cpp', 'python']}, 'disabled': (!has('python'))}
+    NeoBundle 'Valloric/YouCompleteMe',      {'autoload': {'filetypes':['c', 'cpp', 'python']}, 'disabled': (!has('python'))}
 "-----------------------------------------------------------------
 " appearance
 "-----------------------------------------------------------------

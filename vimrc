@@ -2,6 +2,7 @@
 " variables setting
 "-----------------------------------------------------------------
     syntax on
+    set langmenu=en_US.UTF-8
     set undodir=~/tmp/.undo
     set undofile
     set backupdir=~/tmp/
@@ -63,6 +64,8 @@
     set splitright
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store
     set path+=./include,../include,/opt/cuda/include
+    execute "path+=/usr/lib/modules/".system('uname -r')[:-2]."/build/include"
+    execute "path+=/usr/lib/modules/".system('uname -r')[:-2]."/build/arch/x86/include"
     if executable('ag')
         set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
         set grepformat=%f:%l:%c:%m
