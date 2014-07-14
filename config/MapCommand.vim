@@ -176,14 +176,25 @@
             %s/\s\+$//gec
             normal ``
         endfunction
-    command! OpenUrl call OpenUrlUnderCursor()
+    command! OpenUrl :call OpenUrlUnderCursor()
         function! OpenUrlUnderCursor()
-            execute "normal BvEy"
-            let url=matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
-            if url != ""
-                silent exec "!xdg-open ".url | redraw!
+            execute 'normal BvEy'
+            let url = matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
+            if url != ''
+                silent! execute '!xdg-open '.url | redraw!
             else
-                echo "No URL under cursor."
+                echoerr 'No URL under cursor.'
+            endif
+        endfunction
+    command! ViewImage :call ViewImage()
+        function! ViewImage()
+            execute 'normal BvEy'
+            let path = matchstr(@0, '\v((file|local):[/\\]*)=\zs[.~/].*\.(jpg|png|gif|bmp)')
+            if path != ''
+                silent! execute '!feh '.path.' &' | redraw!
+            else
+                let url = matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
+                silent! execute '!feh '.url.' &' | redraw!
             endif
         endfunction
 "-----------------------------------------------------------------

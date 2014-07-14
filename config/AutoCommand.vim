@@ -2,7 +2,7 @@
 " Autocommands
 "-----------------------------------------------------------------
 " miscellaneous
-    autocmd BufWinEnter *                      set formatoptions-=o | set formatoptions+=j
+    autocmd BufWinEnter *                      setlocal formatoptions-=o | setlocal formatoptions+=j
     autocmd BufRead,BufNewFile *.json          setlocal filetype=json
     autocmd BufRead,BufNewFile *.less          setlocal filetype=css
     autocmd BufRead,BufNewFile *.ejs           setlocal filetype=html
