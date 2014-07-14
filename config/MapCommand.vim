@@ -27,7 +27,7 @@
     nnoremap ', mzA,<esc>`z
     nnoremap '. mzA.<esc>`z
 "-----------------------------------------------------------------
-" buffer control
+" tab/buffer control
 "-----------------------------------------------------------------
     nmap <C-TAB>        :tabnext<CR>
     nmap <C-S-TAB>      :tabprevious<CR>
@@ -54,18 +54,22 @@
 "-----------------------------------------------------------------
 " miscellaneous
 "-----------------------------------------------------------------
-    nnoremap gw "ddiWdwEa<space><esc>"dp
+    " toggle fold
     nnoremap <silent><space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+    " select pasted area
     nnoremap <expr> gpv '`['.strpart(getregtype(), 0, 1).'`]'
+    " cscope
     nmap <F12> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files ;<CR>
       \:!cscope -b -i cscope.files -f cscope.out<CR>
       \:cs kill -1<CR>:cs add cscope.out<CR>
       \:!rm cscope.files<CR>
+    " command hist
     cmap <C-f> <C-f>h:call <SID>GetCmdHis()<CR>
         function! s:GetCmdHis()
             let @/ = getline('.')
             normal! NN
         endfunction
+    " spell correction
     nnoremap <C-y> :call <SID>SpellCorrect()<CR>
         function! s:SpellCorrect()
             let s:oldspell = &spell

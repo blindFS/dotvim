@@ -2,7 +2,7 @@
 " Autocommands
 "-----------------------------------------------------------------
 " miscellaneous
-    autocmd BufWinEnter *                      set formatoptions-=o " disable new line autocomment
+    autocmd BufWinEnter *                      set formatoptions-=o | set formatoptions+=j
     autocmd BufRead,BufNewFile *.json          setlocal filetype=json
     autocmd BufRead,BufNewFile *.less          setlocal filetype=css
     autocmd BufRead,BufNewFile *.ejs           setlocal filetype=html
@@ -12,11 +12,14 @@
     autocmd FileType vim                       nnoremap <buffer> K :help <CR>
     autocmd FileType vim                       vnoremap <buffer> K <ESC>:execute "help ".GetVisualSelection()<CR>
     autocmd FileType tex                       setlocal noswapfile
-    autocmd FileType haskell                   inoremap <C-h>l <ESC>g_aa<ESC>C<Space>-><Space>
-    autocmd FileType haskell                   inoremap <C-h>h <ESC>g_aa<ESC>C<Space><-<Space>
-    autocmd FileType haskell                   inoremap <C-h>k <ESC>g_aa<ESC>C<Space>::<Space>
-    autocmd FileType haskell                   inoremap <C-h>j <ESC>g_aa<ESC>C<Space>=><Space>
     autocmd Syntax man                         setlocal nomodifiable
+    augroup haskmap
+        autocmd!
+        autocmd FileType haskell               inoremap <C-h>l <ESC>g_aa<ESC>C<Space>-><Space>
+        autocmd FileType haskell               inoremap <C-h>h <ESC>g_aa<ESC>C<Space><-<Space>
+        autocmd FileType haskell               inoremap <C-h>k <ESC>g_aa<ESC>C<Space>::<Space>
+        autocmd FileType haskell               inoremap <C-h>j <ESC>g_aa<ESC>C<Space>=><Space>
+    augroup END
 
 " number/relativenumber
     autocmd InsertLeave * if &number|setlocal relativenumber|endif
@@ -25,7 +28,7 @@
 " folding
     autocmd FileType html                                           setlocal foldmethod=manual
     autocmd Filetype xml                                            setlocal foldmethod=syntax
-    autocmd Filetype vimwiki,perl,c,cpp,java,javascript,css,zsh,lua setlocal foldmethod=marker " html folding using indent
+    autocmd Filetype vimwiki,perl,c,cpp,java,javascript,css,zsh,lua setlocal foldmethod=marker
     autocmd Filetype vimwiki,perl,c,cpp,java,javascript,css,zsh,lua setlocal foldmarker={,}
 
 " restore

@@ -2,70 +2,71 @@
 " variables setting
 "-----------------------------------------------------------------
     syntax on
-    set langmenu=en_US.UTF-8
-    set undodir=~/tmp/.undo
-    set undofile
-    set backupdir=~/tmp/
-    set directory=~/tmp/
-    set shell=bash
-    set nocompatible
-    set number
-    set relativenumber
-    set cursorline
-    set cursorcolumn
-    set concealcursor=nc
-    set shiftwidth=4 et
-    set shiftround
-    set softtabstop=4
-    set tabstop=4
-    set smarttab
-    set autoread
-    set autoindent
     set autochdir
-    set nowrap
-    set showbreak="↪ "
-    set backupcopy=yes
-    set ignorecase
-    " set smartcase
-    set wildmenu
-    set wildignorecase
-    set wildmode=list,full
-    set wrapscan
-    set incsearch
-    set hlsearch
-    set noerrorbells
-    set novisualbell
-    set clipboard=autoselectplus
-    set t_vb=
-    set magic
-    set timeoutlen=2000
-    set hidden
-    set smartindent
+    set autoindent
+    set autoread
+    set background=dark
     set backspace=indent,eol,start
+    set backupcopy=yes
+    set backupdir=~/tmp/
+    set clipboard=autoselectplus
     set cmdheight=1
-    set laststatus=2
-    set noshowmode
-    set showcmd
-    set foldenable
-    set foldmethod=indent
+    set completeopt=longest,menuone
+    set concealcursor=nc
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+    set cursorcolumn
+    set cursorline
+    set directory=~/tmp/
     set foldcolumn=0
+    set foldenable
     set foldlevelstart=99
+    set foldmethod=indent
+    set guioptions=Ac
+    set hidden
+    set hlsearch
+    set ignorecase
+    set incsearch
+    set langmenu=en_US.UTF-8
+    set laststatus=2
+    set lines=55 columns=150
+    set magic
+    set nocompatible
+    set noerrorbells
+    set noshowmode
+    set novisualbell
+    set nowrap
+    set number
+    set pastetoggle=<F4>
+    set relativenumber
     set scroll=15
     " set scrolloff=5
-    set completeopt=longest,menuone
-    set viminfo='10,\"100,:20,%,!
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-    set updatetime=6000
-    set lines=55 columns=150
-    " set t_Co=256
-    set background=dark
-    set guioptions=Ac
-    set pastetoggle=<F4>
+    set shell=bash
+    set shiftround
+    set shiftwidth=4 et
+    set showbreak="↪ "
+    set showcmd
+    set smartcase
+    set smartindent
+    set smarttab
+    set softtabstop=4
     set splitright
+    " set t_Co=256
+    set t_vb=
+    set tabstop=4
+    set timeoutlen=2000
+    set undodir=~/tmp/.undo
+    set undofile
+    set updatetime=6000
+    set viminfo='10,\"100,:20,%,!
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store
+    set wildignorecase
+    set wildmenu
+    set wildmode=list,full
+    set wrapscan
+
     set path+=./include,../include,/opt/cuda/include
-    execute "path+=/usr/lib/modules/".system('uname -r')[:-2]."/build/include"
-    execute "path+=/usr/lib/modules/".system('uname -r')[:-2]."/build/arch/x86/include"
+    execute "set path+=/usr/lib/modules/".system('uname -r')[:-2]."/build/include"
+    execute "set path+=/usr/lib/modules/".system('uname -r')[:-2]."/build/arch/x86/include"
     if executable('ag')
         set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
         set grepformat=%f:%l:%c:%m
@@ -83,7 +84,6 @@
     source ~/.vim/config/AutoCommand.vim               " autocmds
     source ~/.vim/config/MapCommand.vim                " map and command
     source ~/.vim/config/GlobalVariables.vim           " global variable set
-    " source $VIMRUNTIME/mswin.vim                       " <C-c><C-v> copy paste
     runtime ftplugin/man.vim                           " better man page
 "-----------------------------------------------------------------
 " Plugin Bundles

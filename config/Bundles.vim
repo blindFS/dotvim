@@ -78,7 +78,6 @@
 "-----------------------------------------------------------------
 " navigate
 "-----------------------------------------------------------------
-    NeoBundle 'farseer90718/miscellaneous'
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'mhinz/vim-startify'
@@ -106,8 +105,9 @@
     NeoBundle 'sgur/vim-textobj-parameter', {'depends': 'kana/vim-textobj-user'}
     NeoBundle 'mattn/vim-textobj-url',      {'depends': 'kana/vim-textobj-user'}
 "-----------------------------------------------------------------
-" language suites
+" filetype specific
 "-----------------------------------------------------------------
+    NeoBundle 'farseer90718/miscellaneous'
     NeoBundle 'vimwiki/vimwiki'
     NeoBundle 'moll/vim-node'
     NeoBundleLazy 'gerw/vim-latex-suite',                 {'autoload': {'filetypes': ['tex']}}
