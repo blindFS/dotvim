@@ -186,11 +186,12 @@
                 echoerr 'No URL under cursor.'
             endif
         endfunction
-    command! ViewImage :call ViewImage()
+    command! Feh :call ViewImage()
         function! ViewImage()
             execute 'normal BvEy'
             let path = matchstr(@0, '\v((file|local):[/\\]*)=\zs[.~/].*\.(jpg|png|gif|bmp)')
             if path != ''
+                let path = &filetype == 'vimwiki' ? g:vimwiki_list[0].path . path : path
                 silent! execute '!feh '.path.' &' | redraw!
             else
                 let url = matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
