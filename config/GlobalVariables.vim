@@ -279,10 +279,11 @@
 " plugin - syntastic
 " https://github.com/scrooloose/syntastic.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:syntastic_enable_signs   = 1
-    let g:syntastic_error_symbol   = 'x'
-    let g:syntastic_warning_symbol = '!'
-    let g:syntastic_tex_checkers   = ['lacheck']
+    let g:syntastic_enable_signs    = 1
+    let g:syntastic_error_symbol    = 'x'
+    let g:syntastic_warning_symbol  = '!'
+    let g:syntastic_tex_checkers    = ['lacheck']
+    let g:syntastic_python_checkers = ['flake8-python2']
 "--------------------------------------------------------------------------------------------------------------
 " plugin - YouCompleteMe
 " https://github.com/Valloric/YouCompleteMe.git
@@ -416,11 +417,11 @@
 " plugin - vimshell.vim
 " https://github.com/Shougo/vimshell.vim.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:vimshell_enable_smart_case   = 1
-    let g:vimshell_prompt              = '➤  '
-    let g:vimshell_user_prompt         = 'fnamemodify(getcwd(), ":~")'
-    let g:vimshell_right_prompt        = 'system("date")'
-    let g:vimshell_data_directory = $HOME."/tmp/vimshell"
+    let g:vimshell_enable_smart_case = 1
+    let g:vimshell_prompt            = '➤  '
+    let g:vimshell_user_prompt       = 'fnamemodify(getcwd(), ":~")'
+    let g:vimshell_right_prompt      = 'system("date")'
+    let g:vimshell_data_directory    = $HOME."/tmp/vimshell"
 "--------------------------------------------------------------------------------------------------------------
 " plugin - startify              customize vim startup buffer
 " https://github.com/mhinz/vim-startify
@@ -538,11 +539,9 @@
 " plugin - taghighlight          highlight ctags
 " http://www.cgtk.co.uk/vim-scripts/taghighlight
 "--------------------------------------------------------------------------------------------------------------
-    let g:TagHighlightSettings = {}
-    let g:TagHighlightSettings['LanguageDetectionMethods'] =
-        \ ['Extension', 'FileType']
-    let g:TagHighlightSettings['FileTypeLanguageOverrides'] =
-        \ {'tagbar': 'c'}
+    let g:TagHighlightSettings                              = {}
+    let g:TagHighlightSettings['LanguageDetectionMethods']  = ['Extension', 'FileType']
+    let g:TagHighlightSettings['FileTypeLanguageOverrides'] = {'tagbar': 'c'}
     hi default link Class          String
     hi default link DefinedName    keyword
     hi default link Function       Identifier
