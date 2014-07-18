@@ -283,7 +283,7 @@
     let g:syntastic_error_symbol    = 'x'
     let g:syntastic_warning_symbol  = '!'
     let g:syntastic_tex_checkers    = ['lacheck']
-    let g:syntastic_python_checkers = ['flake8-python2']
+    let g:syntastic_python_checkers = ['flake8']
 "--------------------------------------------------------------------------------------------------------------
 " plugin - YouCompleteMe
 " https://github.com/Valloric/YouCompleteMe.git
