@@ -370,15 +370,23 @@
 " plugin - unite                 search for information from arbitrary sources
 " https://github.com/Shougo/unite.vim
 "--------------------------------------------------------------------------------------------------------------
-    let g:unite_enable_ignore_case         = 1
-    let g:unite_enable_smart_case          = 1
-    let g:unite_enable_start_insert        = 1
-    let g:unite_source_history_yank_enable = 1
-    let g:unite_winheight                  = 10
-    let g:unite_split_rule                 = 'botright'
-    let g:unite_cursor_line_highlight      = 'Statusline'
-    let g:unite_prompt                     = '➤ '
-    let g:unite_data_directory             = $HOME.'/tmp/unite'
+    let g:unite_enable_ignore_case            = 1
+    let g:unite_enable_smart_case             = 1
+    let g:unite_enable_start_insert           = 1
+    let g:unite_source_history_yank_enable    = 1
+    let g:unite_winheight                     = 10
+    let g:unite_split_rule                    = 'botright'
+    let g:unite_cursor_line_highlight         = 'Statusline'
+    let g:unite_prompt                        = '➤ '
+    let g:unite_data_directory                = $HOME.'/tmp/unite'
+	let g:unite_source_grep_max_candidates    = 30
+    if executable('ag')
+        let g:unite_source_grep_command       = 'ag'
+        let g:unite_source_grep_default_opts  =
+                    \ '-i --line-numbers --nocolor --nogroup --hidden --ignore ' .
+                    \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+        let g:unite_source_grep_recursive_opt = ''
+    endif
     command!  Uhelp :Unite help
     nnoremap <Leader><space>b :Unite buffer_tab<CR>
     nnoremap <leader><space>B :Unite buffer<CR>
