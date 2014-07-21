@@ -49,7 +49,7 @@
 " IDE features
 "-----------------------------------------------------------------
     NeoBundle 'scrooloose/syntastic'
-    NeoBundle 'tpope/vim-dispatch'
+    NeoBundle 'thinca/vim-quickrun'
     NeoBundle 'cmdline-completion'
     NeoBundle 'gtags.vim'
     NeoBundle 'Shougo/vimshell.vim',         {'depends': ['Shougo/vimproc', 'vim-jp/vital.vim']}
@@ -79,6 +79,7 @@
 " navigate
 "-----------------------------------------------------------------
     NeoBundle 'Lokaltog/vim-easymotion'
+    NeoBundle 't9md/vim-choosewin'
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'mhinz/vim-startify'
     NeoBundle 'kien/ctrlp.vim'

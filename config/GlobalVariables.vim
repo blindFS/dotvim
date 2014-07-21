@@ -3,8 +3,8 @@
 " https://github.com/kana/vim-textobj-user.git
 "--------------------------------------------------------------------------------------------------------------
 "--------------------------------------------------------------------------------------------------------------
-" plugin - vim-dispatch          fast build
-" https://github.com/tpope/vim-dispatch.git
+" plugin - vim-quickrun
+" https://github.com/thinca/vim-quickrun.git
 "--------------------------------------------------------------------------------------------------------------
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-afterimage        ico,png,gif,doc,pdf
@@ -35,6 +35,23 @@
 " https://github.com/vim-scripts/DrawIt.git
 "--------------------------------------------------------------------------------------------------------------
 "==============================================================================================================
+"--------------------------------------------------------------------------------------------------------------
+" plugin - vim-choosewin
+" https://github.com/t9md/vim-choosewin.git
+"--------------------------------------------------------------------------------------------------------------
+    let g:choosewin_overlay_enable          = 1
+    let g:choosewin_overlay_clear_multibyte = 1
+    let g:choosewin_statusline_replace      = 1
+    let g:choosewin_tabline_replace         = 1
+    let g:choosewin_color_overlay           = {
+          \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
+          \ 'cterm': [ 25, 25 ]
+          \ }
+    let g:choosewin_color_overlay_current   = {
+          \ 'gui': ['firebrick1', 'firebrick1' ],
+          \ 'cterm': [ 124, 124 ]
+          \ }
+    nmap  <leader>q  <Plug>(choosewin)
 "--------------------------------------------------------------------------------------------------------------
 " plugin - evervim
 " https://github.com/kakkyz81/evervim.git
@@ -379,7 +396,7 @@
     let g:unite_cursor_line_highlight         = 'Statusline'
     let g:unite_prompt                        = '➤ '
     let g:unite_data_directory                = $HOME.'/tmp/unite'
-	let g:unite_source_grep_max_candidates    = 30
+    let g:unite_source_grep_max_candidates    = 30
     if executable('ag')
         let g:unite_source_grep_command       = 'ag'
         let g:unite_source_grep_default_opts  =
