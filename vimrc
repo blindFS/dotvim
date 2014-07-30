@@ -28,10 +28,13 @@
     set incsearch
     set langmenu=en_US.UTF-8
     set laststatus=2
+    set list
+    set listchars=tab:➤-,trail:␣,precedes:→
     set lines=55 columns=150
     set magic
     set nocompatible
     set noerrorbells
+    set noswapfile
     set noshowmode
     set novisualbell
     set nowrap

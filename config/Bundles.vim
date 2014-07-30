@@ -62,6 +62,7 @@
 " appearance
 "-----------------------------------------------------------------
     NeoBundle 'bling/vim-airline'
+    NeoBundle 'severin-lemaignan/vim-minimap'
     NeoBundle 'joeytwiddle/sexy_scroller.vim'
     NeoBundle 'farseer90718/Rainbow-Parentheses-Improved-and2'
     NeoBundle 'farseer90718/vim-regionsyntax'
