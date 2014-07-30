@@ -8,7 +8,7 @@
     set background=dark
     set backspace=indent,eol,start
     set backupcopy=yes
-    set backupdir=~/tmp/
+    set backupdir=~/tmp/.backup//
     set clipboard=autoselectplus
     set cmdheight=1
     set completeopt=longest,menuone
@@ -16,7 +16,7 @@
     set cscopequickfix=s-,c-,d-,i-,t-,e-
     set cursorcolumn
     set cursorline
-    set directory=~/tmp/
+    set directory=~/tmp/.swap//
     set foldcolumn=0
     set foldenable
     set foldlevelstart=99
@@ -57,7 +57,7 @@
     set t_vb=
     set tabstop=4
     set timeoutlen=2000
-    set undodir=~/tmp/.undo
+    set undodir=~/tmp/.undo//
     set undofile
     set updatetime=6000
     set viminfo='10,\"100,:20,%,!
@@ -68,8 +68,8 @@
     set wrapscan
 
     set path+=./include,../include,/opt/cuda/include
-    execute "set path+=/usr/lib/modules/".system('uname -r')[:-2]."/build/include"
-    execute "set path+=/usr/lib/modules/".system('uname -r')[:-2]."/build/arch/x86/include"
+    execute 'set path+=/usr/lib/modules/'.system('uname -r')[:-2].'/build/include'
+    execute 'set path+=/usr/lib/modules/'.system('uname -r')[:-2].'/build/arch/x86/include'
     if executable('ag')
         set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
         set grepformat=%f:%l:%c:%m

@@ -110,8 +110,13 @@
     " nnoremap / /\v  " auto very magic
     " nnoremap ? ?\v
     nnoremap 'r :%s:::gc<Left><Left><Left><Left>
-    nnoremap 'g :%g::<Left><Left><Left><Left>
+    nnoremap 'g :%g::<Left><Left>
     cnoremap '\ \(\)<Left><Left>
+"-----------------------------------------------------------------
+" source
+"-----------------------------------------------------------------
+    vnoremap <Leader>S y:execute @@<CR>
+    nnoremap <Leader>S :execute getline('.')<CR>
 "-----------------------------------------------------------------
 " commands
 "-----------------------------------------------------------------
