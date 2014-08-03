@@ -110,7 +110,7 @@
     " nnoremap / /\v  " auto very magic
     " nnoremap ? ?\v
     nnoremap 'r :%s:::gc<Left><Left><Left><Left>
-    nnoremap 'g :%g::<Left><Left>
+    nnoremap 'g :%g::<Left>
     cnoremap '\ \(\)<Left><Left>
 "-----------------------------------------------------------------
 " source

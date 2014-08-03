@@ -61,7 +61,7 @@
     set undofile
     set updatetime=6000
     set viminfo='10,\"100,:20,%,!
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*.o,*.obj
     set wildignorecase
     set wildmenu
     set wildmode=list,full
@@ -70,10 +70,6 @@
     set path+=./include,../include,/opt/cuda/include
     execute 'set path+=/usr/lib/modules/'.system('uname -r')[:-2].'/build/include'
     execute 'set path+=/usr/lib/modules/'.system('uname -r')[:-2].'/build/arch/x86/include'
-    if executable('ag')
-        set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
-        set grepformat=%f:%l:%c:%m
-    endif
 
     " set csprg=gtags-cscope
     " cscope add ~/src/linux-3.11.6/GTAGS
@@ -97,8 +93,8 @@
     source ~/.vim/config/Bundles.vim
     filetype plugin indent on
     if has('gui_running')
-        colorscheme seoul256
-        " colorscheme solarized
+        " colorscheme seoul256
+        colorscheme flattr
     else
         if &term =~ 'linux'
             colorscheme darkblue

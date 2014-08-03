@@ -72,8 +72,8 @@
     NeoBundle 'osyo-manga/vim-over'
     NeoBundle 'tomasr/molokai',                             {'script_type': 'colors'}
     NeoBundle 'junegunn/seoul256.vim',                      {'script_type': 'colors'}
-    NeoBundle 'chriskempson/vim-tomorrow-theme',            {'script_type': 'colors'}
     NeoBundle 'altercation/vim-colors-solarized',           {'script_type': 'colors'}
+    NeoBundle 'farseer90718/flattr.vim',                    {'script_type': 'colors'}
     NeoBundle 'mattn/vimtweak',                             {'disabled': has('unix')}
     NeoBundle 'https://bitbucket.org/abudden/taghighlight', {'type': 'hg' }
 "-----------------------------------------------------------------

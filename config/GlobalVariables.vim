@@ -487,7 +487,7 @@
 "--------------------------------------------------------------------------------------------------------------
 " plugin - easymotion            cursor fast movement
 "--------------------------------------------------------------------------------------------------------------
-    let g:EasyMotion_leader_key = '.'
+    let g:EasyMotion_leader_key = '\\'
     map f <Plug>(easymotion-f)
     map F <Plug>(easymotion-F)
     map t <Plug>(easymotion-t)
@@ -564,17 +564,19 @@
     let g:TagHighlightSettings                              = {}
     let g:TagHighlightSettings['LanguageDetectionMethods']  = ['Extension', 'FileType']
     let g:TagHighlightSettings['FileTypeLanguageOverrides'] = {'tagbar': 'c'}
-    hi default link Class          String
-    hi default link DefinedName    keyword
-    hi default link Function       Identifier
-    hi default link Enumerator     tag
-    hi default link Member         Title
-    hi default link Structure      String
-    hi default link Type           Todo
-    hi default link Union          String
-    hi default link GlobalConstant Constant
-    hi default link GlobalConstant Variable
-    hi default link LocalVariable  Variable
+    if !has('gui_running')
+        hi default link Class          String
+        hi default link DefinedName    keyword
+        hi default link Function       Identifier
+        hi default link Enumerator     tag
+        hi default link Member         Title
+        hi default link Structure      String
+        hi default link Type           Todo
+        hi default link Union          String
+        hi default link GlobalConstant Constant
+        hi default link GlobalConstant Variable
+        hi default link LocalVariable  Variable
+    endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - Tagbar                taglist alternative
 " https://github.com/majutsushi/tagbar
@@ -692,7 +694,6 @@
 " plugin - neocomplete.vim
 " https://github.com/Shougo/neocomplete.vim.git
 "--------------------------------------------------------------------------------------------------------------
-    noremap <F11> :NeoCompleteToggle<CR>
     let g:neocomplete#disable_auto_complete               = 0
     let g:neocomplete#force_overwrite_completefunc        = 1
     let g:neocomplete#enable_at_startup                   = 1
