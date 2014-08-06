@@ -487,11 +487,16 @@
 "--------------------------------------------------------------------------------------------------------------
 " plugin - easymotion            cursor fast movement
 "--------------------------------------------------------------------------------------------------------------
-    let g:EasyMotion_leader_key = '\\'
-    map f <Plug>(easymotion-f)
-    map F <Plug>(easymotion-F)
-    map t <Plug>(easymotion-t)
-    map T <Plug>(easymotion-T)
+    " let g:EasyMotion_leader_key = '\\'
+    " map f <Plug>(easymotion-f)
+    " map F <Plug>(easymotion-F)
+    " map t <Plug>(easymotion-t)
+    " map T <Plug>(easymotion-T)
+"--------------------------------------------------------------------------------------------------------------
+" plugin - clever-f.vim
+" https://github.com/rhysd/clever-f.vim.git
+"--------------------------------------------------------------------------------------------------------------
+    let g:clever_f_chars_match_any_signs = ';'
 "--------------------------------------------------------------------------------------------------------------
 " plugin - CtrlP                 file searching
 " https://github.com/kien/ctrlp.vim

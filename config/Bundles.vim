@@ -79,7 +79,8 @@
 "-----------------------------------------------------------------
 " navigate
 "-----------------------------------------------------------------
-    NeoBundle 'Lokaltog/vim-easymotion'
+    " NeoBundle 'Lokaltog/vim-easymotion'
+    NeoBundle 'rhysd/clever-f.vim'
     NeoBundle 't9md/vim-choosewin'
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'mhinz/vim-startify'
@@ -91,6 +92,7 @@
     NeoBundle 'tpope/vim-speeddating'
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'terryma/vim-multiple-cursors'
+    NeoBundle 'Chiel92/vim-autoformat'
     NeoBundle 'Raimondi/delimitMate'
     NeoBundle 'junegunn/vim-easy-align'
     NeoBundle 'tommcdo/vim-exchange'
