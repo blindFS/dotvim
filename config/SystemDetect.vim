@@ -16,7 +16,7 @@
     endif
     if MySys() == "linux"
         " set guifont=monofur\ 12
-        set guifont=novamono\ 11
+        set guifont=novamono\ 12
     endif
     " multi font coding support
     if has("multi_byte")

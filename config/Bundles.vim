@@ -19,11 +19,11 @@
 "-----------------------------------------------------------------
 " network
 "-----------------------------------------------------------------
-    NeoBundle 'kakkyz81/evervim'
     NeoBundle 'junegunn/vim-github-dashboard'
-    NeoBundle 'jaxbot/github-issues.vim'
     NeoBundle 'farseer90718/vim-translator'
-    NeoBundle 'mattn/gist-vim',   {'depends': ['mattn/webapi-vim']}
+    NeoBundle 'mattn/gist-vim',           {'depends': ['mattn/webapi-vim']}
+    NeoBundle 'kakkyz81/evervim',         {'disabled': (!has('python'))}
+    NeoBundle 'jaxbot/github-issues.vim', {'disabled': (!has('python'))}
 "-----------------------------------------------------------------
 " frontend
 "-----------------------------------------------------------------
@@ -53,9 +53,9 @@
     NeoBundle 'cmdline-completion'
     NeoBundle 'gtags.vim'
     NeoBundle 'Shougo/vimshell.vim',         {'depends': ['Shougo/vimproc', 'vim-jp/vital.vim']}
-    NeoBundle 'Shougo/neocomplete.vim',      {'disabled': (!has('lua'))}
     NeoBundle 'Shougo/context_filetype.vim', {'depends': 'Shougo/neocomplete.vim'}
-    NeoBundle 'Shougo/neosnippet',           {'depends': 'Shougo/neocomplete.vim'}
+    NeoBundle 'Shougo/neocomplete.vim',      {'disabled': (!has('lua') || v:version < 704)}
+    NeoBundle 'Shougo/neosnippet'
     NeoBundle 'Shougo/neosnippet-snippets',  {'depends': 'Shougo/neosnippet'}
     NeoBundle 'Valloric/YouCompleteMe',      {'autoload': {'filetypes':['c', 'cpp', 'python']}, 'disabled': (!has('python'))}
 "-----------------------------------------------------------------

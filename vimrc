@@ -93,13 +93,12 @@
     source ~/.vim/config/Bundles.vim
     filetype plugin indent on
     if has('gui_running')
-        " colorscheme seoul256
         colorscheme flattr
     else
         if &term =~ 'linux'
             colorscheme darkblue
         else
-            colorscheme solarized
+            colorscheme flattr
         endif
     endif
 
