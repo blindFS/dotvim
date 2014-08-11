@@ -1,20 +1,10 @@
 "-----------------------------------------------------------------
-" system info detect
-"-----------------------------------------------------------------
-    function! MySys()
-        if has("win16") || has("win32") || has("win64") || has("win95")
-            return "windows"
-        elseif has("unix")
-            return "linux"
-        endif
-    endfunction
-"-----------------------------------------------------------------
 " fontface and charset
 "-----------------------------------------------------------------
-    if MySys() == "windows"
+    if has('win32') || has('win64')
         set guifont=Monaco:h12:cANSI
     endif
-    if MySys() == "linux"
+    if has('unix')
         " set guifont=monofur\ 12
         set guifont=novamono\ 12
     endif
@@ -25,7 +15,7 @@
         set formatoptions+=mM
         set fileencodings=utf-8,gbk
         " set ambiwidth=double
-        if has("win32")
+        if has("win32") || has('win64')
             source $VIMRUNTIME/delmenu.vim
             source $VIMRUNTIME/menu.vim
             language messages en_US.utf-8

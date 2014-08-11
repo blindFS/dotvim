@@ -72,8 +72,6 @@
     execute 'set path+=/usr/lib/modules/'.system('uname -r')[:-2].'/build/arch/x86/include'
 
     " set csprg=gtags-cscope
-    " cscope add ~/src/linux-3.11.6/GTAGS
-    " cscope add ~/src/linux-3.11.6/cscope.out
     set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
     set tags+=~/.vim/tags
 "-----------------------------------------------------------------

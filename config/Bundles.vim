@@ -12,10 +12,9 @@
     NeoBundle 'DrawIt'
     NeoBundle 'thinca/vim-ref'
     NeoBundle 'LnL7/vim-mark',                {'disabled': (&t_Co != 256 && !has('gui_running'))}
-    NeoBundle 'tpope/vim-fugitive',           {'disabled': (!executable('git'))}
+    NeoBundle 'tpope/vim-fugitive',           {'external_commands': 'git'}
     NeoBundle 'gregsexton/gitv',              {'depends': ['tpope/vim-fugitive']}
-    NeoBundle 'Figlet.vim',                   {'disabled': (!executable('figlet'))}
-    NeoBundle 'farseer90718/vim-taskwarrior', {'disabled': (!executable('task'))}
+    NeoBundle 'farseer90718/vim-taskwarrior', {'external_commands': 'task'}
 "-----------------------------------------------------------------
 " network
 "-----------------------------------------------------------------
@@ -34,6 +33,7 @@
 "-----------------------------------------------------------------
 " Unite.vim
 "-----------------------------------------------------------------
+    NeoBundle 'Shougo/vesting'
     NeoBundle 'Shougo/vimfiler.vim',              {'depends': 'Shougo/unite.vim'}
     NeoBundle 'hewes/unite-gtags',                {'depends': 'Shougo/unite.vim'}
     NeoBundleLazy 'Shougo/unite-help',            {'autoload': {'unite_sources': 'help'}}
@@ -43,6 +43,7 @@
     NeoBundleLazy 'tsukkee/unite-tag',            {'autoload': {'unite_sources': 'tag'}}
     NeoBundleLazy 'tacroe/unite-mark',            {'autoload': {'unite_sources': 'mark'}}
     NeoBundleLazy 'farseer90718/unite-apropos',   {'autoload': {'unite_sources': 'apropos'}}
+    NeoBundleLazy 'farseer90718/unite-workflow',  {'autoload': {'unite_sources': 'github'}}
     NeoBundleLazy 'farseer90718/unite-character', {'autoload': {'commands': ['SearchUnicode', 'HTMLUnicode'], 'unite_sources': 'character'}}
     call unite#custom#source('file, file/new, buffer, file_rec, command, function', 'matchers', 'matcher_fuzzy')
 "-----------------------------------------------------------------
@@ -51,13 +52,16 @@
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'thinca/vim-quickrun'
     NeoBundle 'cmdline-completion'
-    NeoBundle 'gtags.vim'
+    NeoBundle 'gtags.vim',                   {'external_commands': 'global'}
     NeoBundle 'Shougo/vimshell.vim',         {'depends': ['Shougo/vimproc', 'vim-jp/vital.vim']}
     NeoBundle 'Shougo/context_filetype.vim', {'depends': 'Shougo/neocomplete.vim'}
     NeoBundle 'Shougo/neocomplete.vim',      {'disabled': (!has('lua') || v:version < 704)}
     NeoBundle 'Shougo/neosnippet'
     NeoBundle 'Shougo/neosnippet-snippets',  {'depends': 'Shougo/neosnippet'}
-    NeoBundle 'Valloric/YouCompleteMe',      {'autoload': {'filetypes':['c', 'cpp', 'python']}, 'disabled': (!has('python'))}
+    NeoBundle 'Valloric/YouCompleteMe',      {'autoload': {'filetypes':['c', 'cpp', 'python']},
+                \ 'build_commands': 'cmake',
+                \ 'build': './install.sh --clang-completer',
+                \ 'disabled': (!has('python'))}
 "-----------------------------------------------------------------
 " appearance
 "-----------------------------------------------------------------
@@ -67,9 +71,9 @@
     NeoBundle 'farseer90718/Rainbow-Parentheses-Improved-and2'
     NeoBundle 'farseer90718/vim-regionsyntax'
     NeoBundle 'nathanaelkane/vim-indent-guides'
-    NeoBundle 'mhinz/vim-signify'
     NeoBundle 'sjl/gundo.vim'
     NeoBundle 'osyo-manga/vim-over'
+    NeoBundle 'mhinz/vim-signify',                          {'external_commands': 'git'}
     NeoBundle 'tomasr/molokai',                             {'script_type': 'colors'}
     NeoBundle 'junegunn/seoul256.vim',                      {'script_type': 'colors'}
     NeoBundle 'altercation/vim-colors-solarized',           {'script_type': 'colors'}
@@ -118,7 +122,7 @@
     NeoBundleLazy 'vim-perl/vim-perl',                    {'autoload': {'filetypes': ['perl']}}
     NeoBundleLazy 'farseer90718/vim-markdown',            {'autoload': {'filetypes': ['markdown']}}
     NeoBundleLazy 'farseer90718/vim-reveal',              {'autoload': {'filetypes': ['markdown']}}
-    NeoBundleLazy 'eagletmt/neco-ghc',                    {'autoload': {'filetypes': ['haskell']}}
+    NeoBundleLazy 'eagletmt/neco-ghc',                    {'autoload': {'filetypes': ['haskell']}, 'external_commands': 'ghc-mod'}
     NeoBundleLazy 'eagletmt/ghcmod-vim',                  {'autoload': {'filetypes': ['haskell']}}
     NeoBundleLazy 'dag/vim2hs',                           {'autoload': {'filetypes': ['haskell']}}
     NeoBundleLazy 'wannesm/wmgraphviz.vim',               {'autoload': {'filetypes': ['dot']}}

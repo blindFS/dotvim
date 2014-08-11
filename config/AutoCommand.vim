@@ -32,18 +32,8 @@
     autocmd Filetype vimwiki,perl,c,cpp,java,javascript,css,zsh,lua setlocal foldmarker={,}
 
 " restore
-    function! ResCur()
-        if line("'\"") <= line("$")
-            normal! g`"
-            return 1
-        endif
-    endfunction
-
-    augroup resCur
-        autocmd!
-        autocmd BufWinEnter * call ResCur()
-    augroup END
-    autocmd BufWinEnter * silent! loadview
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+    autocmd BufReadPost * silent! loadview
 
 "------------------------------------------------------------------------------------------------------------------------------------
     "                                  ..                                  _                      __ _                    _   _
