@@ -56,12 +56,14 @@
     " set t_Co=256
     set t_vb=
     set tabstop=4
-    set timeoutlen=2000
+    set timeoutlen=500
     set undodir=~/tmp/.undo//
     set undofile
     set updatetime=6000
     set viminfo='10,\"100,:20,%,!
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.dll
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*.o,*.obj
+    set wildignore+=*/.cache/*,*/.git/*,*/.neocon/*,*.log,*.so,*.swp,*.zip,*.gz,*.bz2,*.bmp,*.ppt
     set wildignorecase
     set wildmenu
     set wildmode=list,full
@@ -77,11 +79,11 @@
 "-----------------------------------------------------------------
 " load configurations
 "-----------------------------------------------------------------
-    source ~/.vim/config/SystemDetect.vim              " config accordingly
-    source ~/.vim/config/AutoCommand.vim               " autocmds
-    source ~/.vim/config/MapCommand.vim                " map and command
-    source ~/.vim/config/GlobalVariables.vim           " global variable set
-    runtime ftplugin/man.vim                           " better man page
+    source ~/.vim/config/Environment.vim
+    source ~/.vim/config/AutoCommand.vim
+    source ~/.vim/config/MapCommand.vim
+    source ~/.vim/config/GlobalVariables.vim
+    runtime ftplugin/man.vim
 "-----------------------------------------------------------------
 " Plugin Bundles
 "-----------------------------------------------------------------

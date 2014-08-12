@@ -7,16 +7,8 @@
 " https://github.com/thinca/vim-quickrun.git
 "--------------------------------------------------------------------------------------------------------------
 "--------------------------------------------------------------------------------------------------------------
-" plugin - vim-afterimage        ico,png,gif,doc,pdf
-" https://github.com/tpope/vim-afterimage.git
-"--------------------------------------------------------------------------------------------------------------
-"--------------------------------------------------------------------------------------------------------------
 " plugin - delimitMate           auto pair
 " https://github.com/Raimondi/delimitMate
-"--------------------------------------------------------------------------------------------------------------
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vimux                 interact with tmux from vim
-" https://github.com/benmills/vimux
 "--------------------------------------------------------------------------------------------------------------
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-surround
@@ -30,11 +22,27 @@
 " plugin - renumber.vim
 " https://github.com/vim-scripts/renumber.vim.git
 "--------------------------------------------------------------------------------------------------------------
+"==============================================================================================================
+"--------------------------------------------------------------------------------------------------------------
+" plugin - vim-exchange
+" https://github.com/tommcdo/vim-exchange.git
+"--------------------------------------------------------------------------------------------------------------
+    xmap X   <Plug>(Exchange)
+    nmap cx  <Plug>(Exchange)
+    nmap cxc <Plug>(ExchangeClear)
+    nmap cxx <Plug>(ExchangeLine)
+"--------------------------------------------------------------------------------------------------------------
+" plugin - cmdline-completion
+" https://github.com/vim-scripts/cmdline-completion.git
+"--------------------------------------------------------------------------------------------------------------
+    cmap <silent> <C-P> <Plug>CmdlineCompletionBackward
+    cmap <silent> <C-N> <Plug>CmdlineCompletionForward
 "--------------------------------------------------------------------------------------------------------------
 " plugin - DrawIt
 " https://github.com/vim-scripts/DrawIt.git
 "--------------------------------------------------------------------------------------------------------------
-"==============================================================================================================
+    nmap <Leader>di <Plug>DrawItStart
+    nmap <Leader>ds <Plug>DrawItStop
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-choosewin
 " https://github.com/t9md/vim-choosewin.git
@@ -52,12 +60,6 @@
           \ 'cterm': [ 124, 124 ]
           \ }
     nmap  <leader>q  <Plug>(choosewin)
-"--------------------------------------------------------------------------------------------------------------
-" plugin - evervim
-" https://github.com/kakkyz81/evervim.git
-"--------------------------------------------------------------------------------------------------------------
-    let g:evervim_devtoken = 'S=s60:U=69ad3c:E=14df9ffb4da:C=146a24e88df:P=1cd:A=en-devtoken:V=2:H=d04b0e271ff7ed7bc372d76ef845e12f'
-    let g:evervim_workdir  = $HOME.'/tmp/.evervim'
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim2hs
 " https://github.com/dag/vim2hs.git
@@ -81,6 +83,7 @@
     let g:ref_cache_dir       = $HOME.'/tmp/.vim_ref_cache'
     let g:ref_pydoc_cmd       = 'pydoc2'
     let g:ref_detect_filetype = { 'vimwiki' : 'man', 'markdown' : 'man', 'sh' : 'man'}
+    nmap K <Plug>(ref-keyword)
 "--------------------------------------------------------------------------------------------------------------
 " plugin - wildfire.vim
 " https://github.com/gcmt/wildfire.vim.git
@@ -89,8 +92,8 @@
         \ "*" : ["i'", 'i"', "i)", "i]", "i}", "ii", "ip"],
         \ "html,xml" : ["at"],
         \ }
-    let g:wildfire_fuel_map  = '+'
-    let g:wildfire_water_map = '-'
+    nmap + <Plug>(wildfire-fuel)
+    nmap - <Plug>(wildfire-water)
 "--------------------------------------------------------------------------------------------------------------
 " plugin - gitv
 " https://github.com/gregsexton/gitv.git
@@ -118,6 +121,7 @@
 " https://github.com/terryma/vim-multiple-cursors
 "--------------------------------------------------------------------------------------------------------------
     highlight link multiple_cursors_visual IncSearch
+    nnoremap <C-N> :call multiple_cursors#new("n")<CR>
 "--------------------------------------------------------------------------------------------------------------
 " plugin - eclim                 eclipse port
 " http://eclim.org/gettingstarted.html
@@ -152,7 +156,7 @@
 " plugin - vim-easy-align
 " https://github.com/junegunn/vim-easy-align.git
 "--------------------------------------------------------------------------------------------------------------
-    vnoremap <silent> <Enter> :EasyAlign<Enter>
+    vnoremap <silent> <Enter> :EasyAlign<CR>
     let g:easy_align_delimiters = {
                 \ '>': { 'pattern': '>>\|=>\|>' },
                 \ '/': { 'pattern': '//\+\|/\*\|\*/', 'ignore_groups': ['String'] },
@@ -208,6 +212,7 @@
 "--------------------------------------------------------------------------------------------------------------
     let g:nrrw_rgn_vert = 1
     let g:nrrw_rgn_wdth = 80
+    let g:airline#extensions#nrrwrgn#enabled = 0
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-markdown
 " https://github.com/plasticboy/vim-markdown.git
@@ -281,11 +286,6 @@
     let g:gist_detect_filetype           = 1
     let g:gist_open_browser_after_post   = 0
 "--------------------------------------------------------------------------------------------------------------
-" plugin - vim-preview           preview markdown,html,rdoc in browser
-" https://github.com/greyblake/vim-preview
-"--------------------------------------------------------------------------------------------------------------
-    let g:PreviewBrowsers = 'firefox, google-chrome-stable'
-"--------------------------------------------------------------------------------------------------------------
 " plugin - sexy_scroller.vim
 " https://github.com/joeytwiddle/sexy_scroller.vim.git
 "--------------------------------------------------------------------------------------------------------------
@@ -316,6 +316,7 @@
 " plugin - vimwiki
 " https://github.com/vimwiki/vimwiki
 "--------------------------------------------------------------------------------------------------------------
+    nmap <Leader>ww <Plug>VimwikiIndex
     let g:vimwiki_CJK_length      = 1
     let g:calendar_diary          = $HOME.'/Dropbox/vimwiki/diary'
     let g:vimwiki_list            = [{'path': $HOME.'/Dropbox/vimwiki/',
@@ -402,13 +403,14 @@
         let g:unite_source_grep_recursive_opt = ''
     endif
     command!  Uhelp :Unite help
+    nnoremap <Leader><space>  :Unite<CR>
     nnoremap <Leader><space>b :Unite buffer_tab<CR>
     nnoremap <leader><space>B :Unite buffer<CR>
     nnoremap <leader><space>c :Unite command<CR>
     nnoremap <leader><space>f :Unite file<CR>
     nnoremap <leader><space>j :Unite jump<CR>
     nnoremap <leader><space>l :Unite buffer_tab<CR>
-    nnoremap <leader><space>m :Unite mark<CR>
+    nnoremap <leader><space>m :Unite mapping<CR>
     nnoremap <leader><space>o :Unite outline<CR>
     nnoremap <leader><space>p :Unite mapping<CR>
     nnoremap <leader><space>s :Unite source<CR>
@@ -421,6 +423,9 @@
     nnoremap <leader>gr :Unite gtags/ref<CR>
     nnoremap <leader>ge :Unite gtags/grep<CR>
     vnoremap <leader>gg <ESC>:execute 'Unite gtags/def:'.GetVisualSelection()<CR>
+    command Mru :Unite neomru/file
+    let g:neomru#file_mru_path = $HOME.'/tmp/neomru/file'
+    let g:neomru#directory_mru_path = $HOME.'/tmp/neomru/directory'
     highlight default link uniteSource__Gtags_LineNr String
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vimfiler.vim
@@ -475,41 +480,10 @@
 "--------------------------------------------------------------------------------------------------------------
     let g:seoul256_background = 233
 "--------------------------------------------------------------------------------------------------------------
-" plugin - vim-translator        google translator
-"--------------------------------------------------------------------------------------------------------------
-    let g:goog_user_conf = {
-        \'langpair': '|zh',
-        \'cmd': 'node',
-        \'v_key': 'T',
-        \'r_key': 'R',
-        \'s_key': 'O'
-        \}
-"--------------------------------------------------------------------------------------------------------------
-" plugin - easymotion            cursor fast movement
-"--------------------------------------------------------------------------------------------------------------
-    " let g:EasyMotion_leader_key = '\\'
-    " map f <Plug>(easymotion-f)
-    " map F <Plug>(easymotion-F)
-    " map t <Plug>(easymotion-t)
-    " map T <Plug>(easymotion-T)
-"--------------------------------------------------------------------------------------------------------------
 " plugin - clever-f.vim
 " https://github.com/rhysd/clever-f.vim.git
 "--------------------------------------------------------------------------------------------------------------
     let g:clever_f_chars_match_any_signs = ';'
-"--------------------------------------------------------------------------------------------------------------
-" plugin - CtrlP                 file searching
-" https://github.com/kien/ctrlp.vim
-"--------------------------------------------------------------------------------------------------------------
-    let g:ctrlp_map                 = '<C-space>'
-    let g:ctrlp_cmd                 = 'CtrlP'
-    let g:ctrlp_show_hidden         = 1
-    let g:ctrlp_use_caching         = 1
-    let g:ctrlp_clear_cache_on_exit = 0
-    let g:ctrlp_cache_dir           = $HOME.'/tmp/ctrlp'
-    command!  Mru :CtrlPMRUFiles
-    set wildignore+=*/.cache/*,*/.git/*,*/.neocon/*,*.log,*.so,*.swp,*.zip,*.gz,*.bz2,*.bmp,*.ppt
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.dll
 "--------------------------------------------------------------------------------------------------------------
 " plugin - Gundo                 graphic undo tree
 " http://sjl.bitbucket.org/gundo.vim/
@@ -533,13 +507,12 @@
     let g:lisp_rainbow            = 1
     nnoremap <F10> :Rainbow<CR>
 "--------------------------------------------------------------------------------------------------------------
-" plugin - mark.vim              mark words using beautiful colors
-" \m  mark or unmark the word under (or before) the cursor
-" \r  manually input a regular expression.for search
-" \n  clear this mark (i.e. the mark under the cursor), or clear all
-" \*  next same mark \#  previous same mark
-" \/  next mark \? previous mark
+" plugin - vim-mark
+" https://github.com/LnL7/vim-mark.git
 "--------------------------------------------------------------------------------------------------------------
+    nmap <Leader>m <Plug>MarkSet
+    nmap <Leader>n <Plug>MarkClear
+    nmap <Leader>r <Plug>MarkRegex
     let g:mwIgnoreCase                 = 1
     let g:mwAutoLoadMarks              = 1
     let g:mwAutoSaveMarks              = 1
@@ -687,14 +660,6 @@
                     \ }
                     \ }
     endif
-"--------------------------------------------------------------------------------------------------------------
-" plugin - clang-complete        complete for clang
-" https://github.com/vim-scripts/clang-complete.git
-"--------------------------------------------------------------------------------------------------------------
-    let g:clang_complete_pattern = 1
-    let g:clang_complete_auto    = 1
-    let g:clang_auto_select      = 0
-    let g:clang_use_library      = 1
 "--------------------------------------------------------------------------------------------------------------
 " plugin - neocomplete.vim
 " https://github.com/Shougo/neocomplete.vim.git

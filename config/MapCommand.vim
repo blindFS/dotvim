@@ -131,31 +131,33 @@
             let l:ml= substitute(&commentstring, "%s", l:ml, "")
             call append(line("$"), l:ml)
         endfunction
-    command! -range PluginConfig :'<,'>call PluginAddComment()
-        function! PluginAddComment() range
-            let lines = getline(a:firstline, a:lastline)
+    command! PluginConfig :call PluginAddComment()
+        function! PluginAddComment()
+            let line = getline('.')
             exec 'e ~/.vim/config/GlobalVariables.vim'
-            for line in lines
-                call s:add_commont(line)
-            endfor
+            call s:add_commont(line)
         endfunction
 
         function! s:add_commont(line)
             let line = a:line
             if line =~? '^\s*NeoBundle.*$'
                 let arg = matchstr(line, "'".'\zs[^'."'".']*\ze'."'").matchstr(line,'"\zs[^"]*\ze"')
-                call s:parse_name(arg)
+                let [uri, name] = s:parse_name(arg)
+                if search('plugin - '.name, 'w') != 0
+                    return
+                endif
                 global/====/nohlsearch
                 exec 'call append('.line('.').",'".'"--------------------------------------------------------------------------------------------------------------'."')"
-                exec 'call append('.line('.').",'".'" '.s:uri."')"
-                exec 'call append('.line('.').",'".'" plugin - '.s:name."')"
+                exec 'call append('.line('.').",'".'" '.uri."')"
+                exec 'call append('.line('.').",'".'" plugin - '.name."')"
                 exec 'call append('.line('.').",'".'"--------------------------------------------------------------------------------------------------------------'."')"
+                normal 4j
             endif
         endfunction
 
         function! s:parse_name(arg)
             let arg = a:arg
-            let git_proto = exists('g:vundle_default_git_proto') ? g:vundle_default_git_proto : 'https'
+            let git_proto = 'https'
             if    arg =~? '^\s*\(gh\|github\):\S\+'
             \  || arg =~? '^[a-z0-9][a-z0-9-]*/[^/]\+$'
                 let uri = git_proto.'://github.com/'.split(arg, ':')[-1]
@@ -172,8 +174,7 @@
                 let name = arg
                 let uri  = git_proto.'://github.com/vim-scripts/'.name.'.git'
             endif
-            let s:name = name
-            let s:uri = uri
+            return [uri, name]
         endfunction
     command! TrimSpaces :call TrimSpaces()
         function! TrimSpaces()
