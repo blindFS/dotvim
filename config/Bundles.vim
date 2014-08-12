@@ -8,6 +8,9 @@
     NeoBundle 'farseer90718/vim-taskwarrior', {
                 \ 'external_commands' : 'task',
                 \ }
+    NeoBundleLazy 'farseer90718/vim-translator', {
+                \ 'mappings' : '<Plug>Translate'
+                \ }
     NeoBundleLazy 'chrisbra/NrrwRgn', {
                 \ 'commands' : ['NR', 'NRP']
                 \ }
@@ -48,7 +51,7 @@
                 \ 'unix' : 'make -f make_unix.mak',
                 \ }
                 \ }
-    NeoBundle 'mattn/webapi-vim'
+    NeoBundleLazy 'mattn/webapi-vim'
 "-----------------------------------------------------------------
 " network
 "-----------------------------------------------------------------
@@ -102,11 +105,7 @@
                 \ }
     NeoBundleLazy 'hewes/unite-gtags', {
                 \ 'external_commands' : 'global',
-                \ 'unite_sources' : ['gtags/def',
-                \                   'gtags/completion',
-                \                   'gtags/context',
-                \                   'gtags/grep',
-                \                   'gtags/ref']
+                \ 'unite_sources' : 'gtags'
                 \ }
     NeoBundleLazy 'Shougo/vesting', {
                 \ 'unite_sources' : 'vesting'
@@ -133,7 +132,8 @@
                 \ 'unite_sources' : 'apropos'
                 \ }
     NeoBundleLazy 'farseer90718/unite-workflow', {
-                \ 'unite_sources' : 'github'
+                \ 'unite_sources' : 'github',
+                \ 'depends' : 'mattn/webapi-vim'
                 \ }
     NeoBundleLazy 'farseer90718/unite-character', {
                 \ 'commands' : ['SearchUnicode', 'HTMLUnicode'],
@@ -211,10 +211,10 @@
 " navigate
 "-----------------------------------------------------------------
     NeoBundle 'Shougo/neomru.vim'
+    NeoBundle 'mhinz/vim-startify'
     NeoBundleLazy 'rhysd/clever-f.vim', {
                 \ 'mappings' : ['nxo', 'f', 'F', 't', 'T']
                 \ }
-    NeoBundle 'mhinz/vim-startify'
     NeoBundleLazy 't9md/vim-choosewin', {
                 \ 'mappings' : '<Plug>(choosewin)'
                 \ }
