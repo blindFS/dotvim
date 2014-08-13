@@ -1,57 +1,38 @@
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vim-textobj-user      user defined textobj
-" https://github.com/kana/vim-textobj-user.git
-"--------------------------------------------------------------------------------------------------------------
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vim-quickrun
-" https://github.com/thinca/vim-quickrun.git
-"--------------------------------------------------------------------------------------------------------------
-"--------------------------------------------------------------------------------------------------------------
-" plugin - delimitMate           auto pair
-" https://github.com/Raimondi/delimitMate
-"--------------------------------------------------------------------------------------------------------------
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vim-surround
-" https://github.com/tpope/vim-surround.git
-"--------------------------------------------------------------------------------------------------------------
-"--------------------------------------------------------------------------------------------------------------
-" plugin - clewn                 gdb integration
-" http://clewn.sourceforge.net/
-"--------------------------------------------------------------------------------------------------------------
-"--------------------------------------------------------------------------------------------------------------
-" plugin - renumber.vim
-" https://github.com/vim-scripts/renumber.vim.git
-"--------------------------------------------------------------------------------------------------------------
 "==============================================================================================================
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vim-diminactive
-" https://github.com/blueyed/vim-diminactive.git
-"--------------------------------------------------------------------------------------------------------------
-    let g:diminactive_use_syntax = 0
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-exchange
 " https://github.com/tommcdo/vim-exchange.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-exchange')
     xmap X   <Plug>(Exchange)
     nmap cx  <Plug>(Exchange)
     nmap cxc <Plug>(ExchangeClear)
     nmap cxx <Plug>(ExchangeLine)
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - cmdline-completion
 " https://github.com/vim-scripts/cmdline-completion.git
 "--------------------------------------------------------------------------------------------------------------
-    cmap <silent> <C-P> <Plug>CmdlineCompletionBackward
-    cmap <silent> <C-N> <Plug>CmdlineCompletionForward
+if neobundle#tap('cmdline-completion')
+    cmap <C-P> <Plug>CmdlineCompletionBackward
+    cmap <C-N> <Plug>CmdlineCompletionForward
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - DrawIt
 " https://github.com/vim-scripts/DrawIt.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('DrawIt')
     nmap <Leader>di <Plug>DrawItStart
     nmap <Leader>ds <Plug>DrawItStop
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-choosewin
 " https://github.com/t9md/vim-choosewin.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-choosewin')
     let g:choosewin_overlay_enable          = 1
     let g:choosewin_overlay_clear_multibyte = 1
     let g:choosewin_statusline_replace      = 1
@@ -65,13 +46,18 @@
           \ 'cterm': [ 124, 124 ]
           \ }
     nmap  <leader>q  <Plug>(choosewin)
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim2hs
 " https://github.com/dag/vim2hs.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim2hs')
     let g:haskell_conceal_wide         = 1
     let g:haskell_conceal_bad          = 1
     let g:haskell_conceal_enumerations = 1
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - ghcmod-vim
 " https://github.com/eagletmt/ghcmod-vim.git
@@ -80,30 +66,42 @@
 " plugin - neco-ghc
 " https://github.com/eagletmt/neco-ghc.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('neco-ghc')
     let g:necoghc_enable_detailed_browse = 1
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-ref
 " https://github.com/thinca/vim-ref.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-ref')
     let g:ref_cache_dir       = $HOME.'/tmp/.vim_ref_cache'
     let g:ref_pydoc_cmd       = 'pydoc2'
     let g:ref_detect_filetype = { 'vimwiki' : 'man', 'markdown' : 'man', 'sh' : 'man'}
     nmap K <Plug>(ref-keyword)
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - wildfire.vim
 " https://github.com/gcmt/wildfire.vim.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('wildfire.vim')
     let g:wildfire_objects   = {
         \ "*" : ["i'", 'i"', "i)", "i]", "i}", "ii", "ip"],
         \ "html,xml" : ["at"],
         \ }
     nmap + <Plug>(wildfire-fuel)
     nmap - <Plug>(wildfire-water)
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - gitv
 " https://github.com/gregsexton/gitv.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('gitv')
     let g:Gitv_OpenHorizontal = 0
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - github-issues.vim
 " https://github.com/jaxbot/github-issues.vim.git
@@ -113,258 +111,244 @@
 " plugin - tComment
 " https://github.com/vim-scripts/tComment.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('tComment')
     let g:tcommentTextObjectInlineComment = 'im'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - calendar.vim
 " https://github.com/itchyny/calendar.vim.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('calendar.vim')
     let g:calendar_google_calendar = 1
     let g:calendar_google_task     = 1
     let g:calendar_cache_directory = $HOME.'/tmp/calendar_vim/'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - vim-multiple-cursors  multiple cursors edit like sublime
+" plugin - vim-multiple-cursors
 " https://github.com/terryma/vim-multiple-cursors
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-multiple-cursors')
     highlight link multiple_cursors_visual IncSearch
     nnoremap <C-N> :call multiple_cursors#new("n")<CR>
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - eclim                 eclipse port
+" plugin - eclim
 " http://eclim.org/gettingstarted.html
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('eclim')
     let g:EclimJavaCompleteCaseSensitive = 0
     let g:EclimCompletionMethod          = 'omnifunc'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - wmgraphviz.vim
 " https://github.com/wannesm/wmgraphviz.vim.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('wmgraphviz.vim')
     let g:WMGraphviz_output = 'png'
     let g:WMGraphviz_viewer = 'xdg-open'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - miscellaneous
 " https://github.com/farseer90718/miscellaneous.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('miscellaneous')
     vmap  <expr>  <LEFT>   DVB_Drag('left')
     vmap  <expr>  <RIGHT>  DVB_Drag('right')
     vmap  <expr>  <DOWN>   DVB_Drag('down')
     vmap  <expr>  <UP>     DVB_Drag('up')
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - crunch
 " https://github.com/arecarn/crunch.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('crunch')
     let g:crunch_calc_prompt = '➤  '
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vim-over
-" https://github.com/osyo-manga/vim-over.git
-"--------------------------------------------------------------------------------------------------------------
-    let g:over_command_line_prompt = '➤  '
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-easy-align
 " https://github.com/junegunn/vim-easy-align.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-easy-align')
+    let g:neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/easy-align.rc.vim'
     vnoremap <silent> <Enter> :EasyAlign<CR>
-    let g:easy_align_delimiters = {
-                \ '>': { 'pattern': '>>\|=>\|>' },
-                \ '/': { 'pattern': '//\+\|/\*\|\*/', 'ignore_groups': ['String'] },
-                \ '#': { 'pattern': '#\+', 'ignore_groups': ['String'], 'delimiter_align': 'l' },
-                \ ']': {
-                \     'pattern':       '[[\]]',
-                \     'left_margin':   0,
-                \     'right_margin':  0,
-                \     'stick_to_left': 0
-                \   },
-                \ ')': {
-                \     'pattern':       '[()]',
-                \     'left_margin':   0,
-                \     'right_margin':  0,
-                \     'stick_to_left': 0
-                \   },
-                \ 'd': {
-                \     'pattern': ' \(\S\+\s*[;=]\)\@=',
-                \     'left_margin': 0,
-                \     'right_margin': 0
-                \   }
-                \ }
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-translator
 " https://github.com/farseer90718/vim-translator.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-translator')
     vmap T <Plug>Translate
     vmap R <Plug>TranslateReplace
-    vmap O <Plug>TranslateSpeak
+    vmap P <Plug>TranslateSpeak
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-taskwarrior
 " https://github.com/farseer90718/vim-taskwarrior.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-taskwarrior')
     let g:task_report_name              = 'long'
     let g:task_highlight_field          = 1
     let g:task_field_highlight_advanced = ''
     let g:task_default_prompt           = ['description', 'due', 'priority', 'tag', 'depend']
     " let g:task_rc_override              = ''
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-reveal
 " https://github.com/farseer90718/vim-reveal.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-reveal')
     let g:reveal_root_path      = $HOME.'/workspace/html/apps/reveal.js'
     let g:reveal_default_config = {
                 \'author' : '"farseer"',
                 \'description' : '"This presentation is generated by vim-reveal."',
                 \'fname' : 'reveal'
                 \}
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - NrrwRgn
 " https://github.com/chrisbra/NrrwRgn.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('NrrwRgn')
     let g:nrrw_rgn_vert = 1
     let g:nrrw_rgn_wdth = 80
     let g:airline#extensions#nrrwrgn#enabled = 0
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-markdown
 " https://github.com/plasticboy/vim-markdown.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-markdown')
     let g:vim_markdown_initial_foldlevel=99
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-regionsyntax
 " https://github.com/farseer90718/vim-regionsyntax.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:regionsyntax_ft_trans = {
-                \ 'ini' : 'dosini',
-                \ 'js' : 'javascript',
-                \ 'basemake' : 'make'}
-    let g:regionsyntax_map = {
-            \ "tex" :
-            \ [{
-            \   'start' : '\\begin{minted}[^{]*{<syntax>}',
-            \   'end' : '\\end{minted}',
-            \ }]}
+if neobundle#tap('vim-regionsyntax')
+    let g:neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/region-syntax.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - context_filetype.vim
 " https://github.com/Shougo/context_filetype.vim.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:context_filetype#filetypes = {
-      \ 'markdown': [
-      \   {
-      \    'start' : '^\s*```\s*\(\h\w*\)',
-      \    'end' : '^\s*```$',
-      \    'filetype' : '\1',
-      \   },
-      \   {
-      \    'start' : '^\s*{%\s*highlight\s\+\(\h\w*\)\s*%}',
-      \    'end' : '^\s*{%\s*endhighlight\s*%}',
-      \    'filetype' : '\1',
-      \   },
-      \ ],
-      \ 'vimwiki': [
-      \   {
-      \    'start' : '^\s*{{{class=.\(\h\w*\)',
-      \    'end' : '^\s*}}}',
-      \    'filetype' : '\1',
-      \   },
-      \ ],
-      \ 'tex': [
-      \  {
-      \   'start' : '\\begin{minted}[^{]*{\(\h\w*\)}',
-      \   'end' : '\\end{minted}',
-      \    'filetype' : '\1',
-      \  }
-      \ ], }
+if neobundle#tap('context_filetype.vim')
+    let g:neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/context-filetype.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - slimv
 " https://bitbucket.org/kovisoft/slimv
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('slimv')
     let g:slimv_impl     = 'sbcl'
     let g:paredit_leader = ','
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-github-dashboard
 " https://github.com/junegunn/vim-github-dashboard.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-github-dashboard')
     let g:github_dashboard = {
                 \ 'username': 'farseer90718',
                 \ 'api_open_timeout': 10,
                 \ 'api_read_timeout': 20,
                 \ 'statusline': 0}
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - gist-vim
 " https://github.com/mattn/gist-vim.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('gist-vim')
     let g:gist_clip_command              = 'xclip -selection clipboard'
     let g:gist_detect_filetype           = 1
     let g:gist_open_browser_after_post   = 0
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - sexy_scroller.vim
 " https://github.com/joeytwiddle/sexy_scroller.vim.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('sexy_scroller.vim')
     let g:SexyScroller_EasingStyle = 2
     let g:SexyScroller_ScrollTime  = 5
     let g:SexyScroller_MaxTime     = 500
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - syntastic
 " https://github.com/scrooloose/syntastic.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('syntastic')
     let g:syntastic_enable_signs    = 1
     let g:syntastic_error_symbol    = 'x'
     let g:syntastic_warning_symbol  = '!'
     let g:syntastic_tex_checkers    = ['lacheck']
     let g:syntastic_python_checkers = ['flake8']
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - YouCompleteMe
 " https://github.com/Valloric/YouCompleteMe.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:ycm_allow_changing_updatetime                  = 0
-    let g:ycm_register_as_syntastic_checker              = 1
-    let g:ycm_confirm_extra_conf                         = 1
-    let g:ycm_global_ycm_extra_conf                      = '~/tmp/.ycm_extra_conf_c.py'
-    " let g:ycm_filetype_whitelist                         = { 'python': 1, 'cpp': 1, 'c': 1}
-    autocmd FileType c let g:ycm_global_ycm_extra_conf   = '~/tmp/.ycm_extra_conf_c.py'
-    autocmd FileType cpp let g:ycm_global_ycm_extra_conf = '~/tmp/.ycm_extra_conf_cpp.py'
+if neobundle#tap('YouCompleteMe')
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/youcompleteme.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vimwiki
 " https://github.com/vimwiki/vimwiki
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vimwiki')
     nmap <Leader>ww <Plug>VimwikiIndex
-    let g:vimwiki_CJK_length      = 1
-    let g:calendar_diary          = $HOME.'/Dropbox/vimwiki/diary'
-    let g:vimwiki_list            = [{'path': $HOME.'/Dropbox/vimwiki/',
-                \ 'path_html': $HOME.'/Dropbox/vimwiki/html/',
-                \ 'css_name': 'assets/css/style.css',
-                \ 'template_path': $HOME.'/Dropbox/vimwiki/templates',
-                \ 'template_default': 'def_template',
-                \ 'template_ext': '.html'}]
-    let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr,table,tr,th,td,p,span'
-    let g:vimwiki_code_syntax_map = {
-                \ 'lisp' : 'cl',
-                \ 'charmpp' : 'c'}
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/vimwiki.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - colorizer             color highlight
 " https://github.com/lilydjwg/colorizer.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('colorizer')
     nnoremap <F8> :ColorToggle<CR>
     let g:colorizer_nomap   = 1
     let g:colorizer_startup = 0
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-signify
 " https://github.com/mhinz/vim-signify.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:signify_mapping_next_hunk        = '<leader>gj'
-    let g:signify_mapping_prev_hunk        = '<leader>gk'
-    let g:signify_mapping_toggle_highlight = '<leader><F9>'
-    let g:signify_mapping_toggle           = '<F9>'
-    let g:signify_disable_by_default       = 0
-    let g:signify_sign_add                 = '+'
-    let g:signify_sign_change              = '*'
-    let g:signify_sign_delete              = 'x'
-    let g:signify_sign_delete_first_line   = 'X'
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vim-easytags
-" https://github.com/xolox/vim-easytags.git
-"--------------------------------------------------------------------------------------------------------------
-    let g:easytags_file            = $HOME.'/.vim/tags'
-    let g:easytags_updatetime_min  = 3000
-    let g:easytags_updatetime_warn = 0
+if neobundle#tap('vim-signify')
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/signify.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-airline
 " https://github.com/bling/vim-airline.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:airline_theme                               = 'luna'
+if neobundle#tap('vim-airline')
+    let g:airline_theme                               = 'bubblegum'
     let g:airline_left_sep                            = ''
     let g:airline_left_alt_sep                        = ''
     let g:airline_right_sep                           = ''
@@ -385,28 +369,15 @@
     let g:airline#extensions#tabline#show_buffers     = 1
     let g:airline#extensions#tabline#buffer_min_count = 2
     let g:airline#extensions#tabline#fnamemod         = ':t'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - unite                 search for information from arbitrary sources
+" plugin - unite.vim
 " https://github.com/Shougo/unite.vim
 "--------------------------------------------------------------------------------------------------------------
-    let g:unite_enable_ignore_case            = 1
-    let g:unite_enable_smart_case             = 1
-    let g:unite_enable_start_insert           = 1
-    let g:unite_source_history_yank_enable    = 1
-    let g:unite_winheight                     = 10
-    let g:unite_split_rule                    = 'botright'
-    let g:unite_cursor_line_highlight         = 'Statusline'
-    let g:unite_prompt                        = '➤ '
-    let g:unite_data_directory                = $HOME.'/tmp/unite'
-    let g:unite_source_grep_max_candidates    = 30
-    if executable('ag')
-        let g:unite_source_grep_command       = 'ag'
-        let g:unite_source_grep_default_opts  =
-                    \ '-i --line-numbers --nocolor --nogroup --hidden --ignore ' .
-                    \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
-        let g:unite_source_grep_recursive_opt = ''
-    endif
-    command!  Uhelp :Unite help
+if neobundle#tap('unite.vim')
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/unite.rc.vim'
     nnoremap <Leader><space>  :Unite<CR>
     nnoremap <Leader><space>b :Unite buffer_tab<CR>
     nnoremap <leader><space>B :Unite buffer<CR>
@@ -428,35 +399,52 @@
     nnoremap <leader>ge :Unite gtags/grep<CR>
     vnoremap <leader>gg <ESC>:execute 'Unite gtags/def:'.GetVisualSelection()<CR>
     command Mru :Unite neomru/file
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
+" plugin - neomru.vim
+" https://github.com/Shougo/neomru.vim.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('neomru.vim')
     let g:neomru#file_mru_path = $HOME.'/tmp/neomru/file'
     let g:neomru#directory_mru_path = $HOME.'/tmp/neomru/directory'
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
+" plugin - unite-gtags
+" https://github.com/hewes/unite-gtags.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('unite-gtags')
     highlight default link uniteSource__Gtags_LineNr String
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vimfiler.vim
 " https://github.com/Shougo/vimfiler.vim.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:vimfiler_as_default_explorer = 1
-    let g:vimfiler_tree_leaf_icon      = ' '
-    let g:vimfiler_tree_opened_icon    = '▾'
-    let g:vimfiler_tree_closed_icon    = '▸'
-    let g:vimfiler_file_icon           = '-'
-    let g:vimfiler_marked_file_icon    = '*'
-    let g:vimfiler_ignore_pattern      = '^\%(.git\|.DS_Store\)$'
-    let g:vimfiler_data_directory      = $HOME.'/tmp/vimfiler'
+if neobundle#tap('vimfiler.vim')
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/vimfiler.rc.vim'
     nnoremap <F1> :VimFilerExplorer<CR>
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vimshell.vim
 " https://github.com/Shougo/vimshell.vim.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vimshell.vim')
     let g:vimshell_enable_smart_case = 1
     let g:vimshell_prompt            = '➤  '
     let g:vimshell_user_prompt       = 'fnamemodify(getcwd(), ":~")'
     let g:vimshell_right_prompt      = 'system("date")'
     let g:vimshell_data_directory    = $HOME."/tmp/vimshell"
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - startify              customize vim startup buffer
+" plugin - vim-startify
 " https://github.com/mhinz/vim-startify
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-startify')
     let g:startify_bookmarks     = [ '~/.vimrc','~/.zshrc','~/.vim/config','~/vimwiki/' ]
     let g:startify_custom_header = map(split(system("toilet -f pagga 42 | cowsay -d -f cowfee"), '\n'), '"   ". v:val') + ['','']
     let g:startify_skiplist      = [
@@ -464,40 +452,40 @@
         \ $VIMRUNTIME .'/doc',
         \ 'bundle/.*/doc'
         \ ]
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin – emmet.vim             zencoding
+" plugin – emmet-vim
 " https://github.com/mattn/emmet-vim
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('emmet-vim')
     let g:user_emmet_mode       = 'a'
     let g:user_emmet_leader_key = '<c-e>'
-"--------------------------------------------------------------------------------------------------------------
-" plugin - Solarized             Colorscheme
-"--------------------------------------------------------------------------------------------------------------
-    let g:solarized_bold       = 1
-    let g:solarized_italic     = 1
-    let g:solarized_termcolors = 256
-    let g:solarized_termtrans  = 1
-    let g:solarized_degrade    = 0
-"--------------------------------------------------------------------------------------------------------------
-" plugin - seoul256.vim
-" https://github.com/junegunn/seoul256.vim.git
-"--------------------------------------------------------------------------------------------------------------
-    let g:seoul256_background = 233
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - clever-f.vim
 " https://github.com/rhysd/clever-f.vim.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('clever-f.vim')
     let g:clever_f_chars_match_any_signs = ';'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - Gundo                 graphic undo tree
+" plugin - gundo.vim
 " http://sjl.bitbucket.org/gundo.vim/
 "--------------------------------------------------------------------------------------------------------------
-    noremap <F3> :GundoToggle<CR>
+if neobundle#tap('gundo.vim')
+    nnoremap <F3> :GundoToggle<CR>
     let g:gundo_right        = 1
     let g:gundo_auto_preview = 1
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - rainbow parentheses   colorful parentheses
+" plugin - Rainbow-Parentheses-Improved-and2
+" https://github.com/farseer90718/Rainbow-Parentheses-Improved-and2.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('Rainbow-Parentheses-Improved-and2')
     let g:rainbow_active          = 1
     let g:rainbow_load_separately = [
     \   [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
@@ -510,10 +498,13 @@
     \   ]
     let g:lisp_rainbow            = 1
     nnoremap <F10> :Rainbow<CR>
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-mark
 " https://github.com/LnL7/vim-mark.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-mark')
     nmap <Leader>m <Plug>MarkSet
     nmap <Leader>n <Plug>MarkClear
     nmap <Leader>r <Plug>MarkRegex
@@ -522,16 +513,23 @@
     let g:mwAutoSaveMarks              = 1
     let g:mwDefaultHighlightingNum     = 20
     let g:mwDefaultHighlightingPalette = 'maximum'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-latex-suite
 " https://github.com/gerw/vim-latex-suite.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-latex-suite')
     let g:tex_flavor              = 'latex'
     let g:Tex_DefaultTargetFormat = 'pdf'
     let g:Tex_AutoFolding         = 0
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - indentGuides          visualize indent
+" plugin - vim-indent-guides
+" https://github.com/nathanaelkane/vim-indent-guides.git
 "--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-indent-guides')
     " autocmd VimEnter,Colorscheme * hi IndentGuidesOdd  guibg = darkyellow ctermbg = darkyellow
     " autocmd VimEnter,Colorscheme * hi IndentGuidesEven guibg = darkblue ctermbg   = darkblue
     let g:indent_guides_auto_colors           = 1
@@ -539,166 +537,50 @@
     let g:indent_guides_guide_size            = 1
     let g:indent_guides_enable_on_vim_startup = 1
     let g:indent_guides_exclude_filetypes     = ['w3m', 'help', 'tagbar', 'unite', 'vimfiler', 'startify', 'taskreport', 'calendar']
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - taghighlight          highlight ctags
+" plugin - taghighlight
 " http://www.cgtk.co.uk/vim-scripts/taghighlight
 "--------------------------------------------------------------------------------------------------------------
-    let g:TagHighlightSettings                              = {}
-    let g:TagHighlightSettings['LanguageDetectionMethods']  = ['Extension', 'FileType']
-    let g:TagHighlightSettings['FileTypeLanguageOverrides'] = {'tagbar': 'c'}
-    if !has('gui_running')
-        hi default link Class          String
-        hi default link DefinedName    keyword
-        hi default link Function       Identifier
-        hi default link Enumerator     tag
-        hi default link Member         Title
-        hi default link Structure      String
-        hi default link Type           Todo
-        hi default link Union          String
-        hi default link GlobalConstant Constant
-        hi default link GlobalConstant Variable
-        hi default link LocalVariable  Variable
-    endif
+if neobundle#tap('taghighlight')
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/taghighlight.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - Tagbar                taglist alternative
+" plugin - tagbar
 " https://github.com/majutsushi/tagbar
 "--------------------------------------------------------------------------------------------------------------
-    noremap <F2> :TagbarToggle<CR>
-    let g:tagbar_type_vimwiki = {
-                \ 'ctagstype' : 'wiki',
-                \ 'kinds'     : ['h:headers'],
-                \ 'sort'      : 0
-                \ }
-    let g:tagbar_type_markdown = {
-                \ 'ctagstype' : 'md',
-                \ 'kinds' : ['h:headings'],
-                \ 'sort' : 0,
-                \ }
-    let g:tagbar_type_html = {
-                \ 'ctagstype' : 'html',
-                \ 'kinds'     : ['i:ids', 'c:classes']
-                \ }
-    let g:tagbar_type_css = {
-                \ 'ctagstype' : 'css',
-                \ 'kinds' : [
-                \ 'c:classes',
-                \ 'i:ids',
-                \ 't:tags',
-                \ 'm:media',
-                \ 'f:fonts',
-                \ 'k:keyframes'
-                \ ],
-                \ 'sort' : 0,
-                \ }
-    let g:tagbar_type_tex = {
-                \ 'ctagstype' : 'latex',
-                \ 'kinds' : [
-                \ 'l:labels',
-                \ 's:sections',
-                \ 'd:definitions',
-                \ 'e:environments'
-                \ ]
-                \ }
-    let g:tagbar_type_javascript = {
-                \ 'ctagstype' : 'javascript',
-                \ 'kinds' : [
-                \ 'o:object',
-                \ 'f:function',
-                \ 'a:array',
-                \ 's:string',
-                \ 'b:boolean',
-                \ 'n:number',
-                \ 'v:variable',
-                \ 'm:member'
-                \ ]
-                \ }
-    let g:tagbar_type_vhdl = {
-                \ 'ctagstype': 'vhdl',
-                \ 'kinds' : [
-                \ 'd:prototypes',
-                \ 'b:package bodies',
-                \ 'e:entities',
-                \ 'a:architectures',
-                \ 't:types',
-                \ 'p:processes',
-                \ 'f:functions',
-                \ 'r:procedures',
-                \ 'c:constants',
-                \ 'T:subtypes',
-                \ 'r:records',
-                \ 'C:components',
-                \ 'P:packages',
-                \ 'l:locals'
-                \ ]
-                \ }
-    if executable('hasktags')
-        let g:tagbar_type_haskell = {
-                    \ 'ctagsbin'  : 'hasktags',
-                    \ 'ctagsargs' : '-x -c -o-',
-                    \ 'kinds'     : [
-                    \  'm:modules:0:1',
-                    \  'd:data: 0:1',
-                    \  'd_gadt: data gadt:0:1',
-                    \  't:type names:0:1',
-                    \  'nt:new types:0:1',
-                    \  'c:classes:0:1',
-                    \  'cons:constructors:1:1',
-                    \  'c_gadt:constructor gadt:1:1',
-                    \  'c_a:constructor accessors:1:1',
-                    \  'ft:function types:1:1',
-                    \  'fi:function implementations:0:1',
-                    \  'o:others:0:1'
-                    \ ],
-                    \ 'sro'        : '.',
-                    \ 'kind2scope' : {
-                    \ 'm' : 'module',
-                    \ 'c' : 'class',
-                    \ 'd' : 'data',
-                    \ 't' : 'type'
-                    \ },
-                    \ 'scope2kind' : {
-                    \ 'module' : 'm',
-                    \ 'class'  : 'c',
-                    \ 'data'   : 'd',
-                    \ 'type'   : 't'
-                    \ }
-                    \ }
-    endif
+if neobundle#tap('tagbar')
+    nnoremap <F2> :TagbarToggle<CR>
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/tagbar.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " plugin - neocomplete.vim
 " https://github.com/Shougo/neocomplete.vim.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:neocomplete#disable_auto_complete               = 0
-    let g:neocomplete#force_overwrite_completefunc        = 1
-    let g:neocomplete#enable_at_startup                   = 1
-    let g:neocomplete#enable_ignore_case                  = 1
-    let g:neocomplete#enable_fuzzy_completion             = 1
-    let g:neocomplete#data_directory                      = $HOME.'/tmp/.neocomplete'
-    if !exists('g:neocomplete#force_omni_input_patterns')
-        let g:neocomplete#force_omni_input_patterns       = {}
-    endif
-    let g:neocomplete#force_omni_input_patterns.python     = '\%([^. \t]\.\|^\s*@\)\w*'
-    let g:neocomplete#force_omni_input_patterns.dot        = '\[.*'
-    let g:neocomplete#force_omni_input_patterns.c          = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-    let g:neocomplete#force_omni_input_patterns.cpp        = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-    let g:neocomplete#force_omni_input_patterns.objc       = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-    let g:neocomplete#force_omni_input_patterns.objcpp     = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+if neobundle#tap('neocomplete.vim')
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/neocomplete.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - neosnippet.vim        snippets
+" plugin - neosnippet.vim
 " https://github.com/shougo/neosnippet.vim
 "--------------------------------------------------------------------------------------------------------------
-    " let g:neosnippet#enable_preview = 0
-    " set completeopt+=preview
-    let g:neosnippet#snippets_directory = $HOME.'/.vim/snippets'
-    let g:neosnippet#data_directory     = $HOME.'/tmp/neosnippet'
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
+if neobundle#tap('neosnippet.vim')
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/neosnippet.rc.vim'
+    call neobundle#untap()
+endif
 "--------------------------------------------------------------------------------------------------------------
 " Web Design configurations
 "--------------------------------------------------------------------------------------------------------------
-    let g:html_use_css                     = 1 " Tohtml make html using css
-    let g:xml_syntax_folding               = 1 " xml folding
+    let g:html_use_css                     = 1
+    let g:xml_syntax_folding               = 1
 
 "------------------------------------------------------------------------------------------------------------------------------------
     "                                  ..                                  _                      __ _                    _   _

@@ -81,11 +81,7 @@
 "-----------------------------------------------------------------
 " Unite.vim
 "-----------------------------------------------------------------
-    NeoBundleLazy 'Shougo/unite.vim', {
-                \ 'commands' : [{ 'name' : 'Unite',
-                \ 'complete' : 'customlist,unite#complete_source'},
-                \ 'UniteWithCursorWord', 'UniteWithInput']
-                \ }
+    NeoBundle 'Shougo/unite.vim'
     NeoBundleLazy 'Shougo/vimfiler.vim', {
                 \ 'depends' : 'Shougo/unite.vim',
                 \ 'commands' : [
@@ -139,7 +135,6 @@
                 \ 'commands' : ['SearchUnicode', 'HTMLUnicode'],
                 \ 'unite_sources' : 'character'
                 \ }
-    call unite#custom#source('file, file/new, buffer, file_rec, command, function', 'matchers', 'matcher_fuzzy')
 "-----------------------------------------------------------------
 " IDE features
 "-----------------------------------------------------------------
@@ -147,7 +142,7 @@
                 \ 'insert' : 1
                 \ }
     NeoBundleLazy 'cmdline-completion', {
-                \ 'mappings' : ['c', '<Plug>CmdlineCompletion']
+                \ 'mappings' : ['nxo', ':', '/', '?']
                 \ }
     NeoBundleLazy 'thinca/vim-quickrun', {
                 \ 'commands' : 'QuickRun',
@@ -204,8 +199,6 @@
 " colorscheme
 "-----------------------------------------------------------------
     NeoBundle 'tomasr/molokai',                   {'script_type' : 'colors'}
-    NeoBundle 'junegunn/seoul256.vim',            {'script_type' : 'colors'}
-    NeoBundle 'altercation/vim-colors-solarized', {'script_type' : 'colors'}
     NeoBundle 'farseer90718/flattr.vim',          {'script_type' : 'colors'}
 "-----------------------------------------------------------------
 " navigate

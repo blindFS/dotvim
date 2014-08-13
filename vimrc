@@ -77,6 +77,24 @@
     set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
     set tags+=~/.vim/tags
 "-----------------------------------------------------------------
+" Plugin Bundles
+"-----------------------------------------------------------------
+    filetype off
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    call neobundle#rc(expand('~/.vim/bundle/'))
+    if neobundle#has_cache()
+        NeoBundleLoadCache
+    else
+        source ~/.vim/config/Bundles.vim
+        NeoBundleSaveCache
+    endif
+    filetype plugin indent on
+    if &term =~ 'linux'
+        colorscheme darkblue
+    else
+        colorscheme flattr
+    endif
+"-----------------------------------------------------------------
 " load configurations
 "-----------------------------------------------------------------
     source ~/.vim/config/Environment.vim
@@ -84,23 +102,6 @@
     source ~/.vim/config/MapCommand.vim
     source ~/.vim/config/GlobalVariables.vim
     runtime ftplugin/man.vim
-"-----------------------------------------------------------------
-" Plugin Bundles
-"-----------------------------------------------------------------
-    filetype off
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/.vim/bundle/'))
-    source ~/.vim/config/Bundles.vim
-    filetype plugin indent on
-    if has('gui_running')
-        colorscheme flattr
-    else
-        if &term =~ 'linux'
-            colorscheme darkblue
-        else
-            colorscheme flattr
-        endif
-    endif
 
 "------------------------------------------------------------------------------------------------------------------------------------
     "                                  ..                                  _                      __ _                    _   _
