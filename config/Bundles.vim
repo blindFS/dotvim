@@ -6,7 +6,7 @@
     NeoBundle 'tpope/vim-fugitive'
     NeoBundle 'blueyed/vim-diminactive'
     NeoBundle 'farseer90718/vim-taskwarrior', {
-                \ 'external_commands' : 'task',
+                \ 'external_commands' : 'task'
                 \ }
     NeoBundleLazy 'farseer90718/vim-translator', {
                 \ 'mappings' : '<Plug>Translate'

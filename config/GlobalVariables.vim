@@ -132,6 +132,7 @@ endif
 if neobundle#tap('vim-multiple-cursors')
     highlight link multiple_cursors_visual IncSearch
     nnoremap <C-N> :call multiple_cursors#new("n")<CR>
+    xnoremap <C-N> :<C-U>call multiple_cursors#new("n")<CR>
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -200,7 +201,7 @@ if neobundle#tap('vim-taskwarrior')
     let g:task_highlight_field          = 1
     let g:task_field_highlight_advanced = ''
     let g:task_default_prompt           = ['description', 'due', 'priority', 'tag', 'depend']
-    " let g:task_rc_override              = ''
+    let g:task_rc_override              = ''
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------

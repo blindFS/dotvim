@@ -1,6 +1,8 @@
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#custom#source('command, function',
             \ 'matchers', 'matcher_fuzzy')
+call unite#custom#source('neomru/file',
+            \ 'matchers', 'matcher_context')
 call unite#custom#profile('default', 'context', {
             \ 'start_insert' : 1,
             \ 'ignore_case' : 1,
