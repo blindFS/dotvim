@@ -378,27 +378,6 @@ endif
 if neobundle#tap('unite.vim')
     let neobundle#hooks.on_source =
                 \ '~/.vim/config/plugins/unite.rc.vim'
-    nnoremap <Leader><space>  :Unite<CR>
-    nnoremap <Leader><space>b :Unite buffer_tab<CR>
-    nnoremap <leader><space>B :Unite buffer<CR>
-    nnoremap <leader><space>c :Unite command<CR>
-    nnoremap <leader><space>f :Unite file<CR>
-    nnoremap <leader><space>j :Unite jump<CR>
-    nnoremap <leader><space>l :Unite buffer_tab<CR>
-    nnoremap <leader><space>m :Unite mapping<CR>
-    nnoremap <leader><space>o :Unite outline<CR>
-    nnoremap <leader><space>p :Unite mapping<CR>
-    nnoremap <leader><space>s :Unite source<CR>
-    nnoremap <leader><space>t :Unite tab<CR>
-    nnoremap <leader><space>T :Unite tag<CR>
-    nnoremap <leader><space>y :Unite history/yank<CR>
-    nnoremap <leader><space>/ :Unite grep:.<CR>
-    nnoremap <leader>gg :execute 'Unite gtags/def:'.expand('<cword>')<CR>
-    nnoremap <leader>gc :Unite gtags/context<CR>
-    nnoremap <leader>gr :Unite gtags/ref<CR>
-    nnoremap <leader>ge :Unite gtags/grep<CR>
-    vnoremap <leader>gg <ESC>:execute 'Unite gtags/def:'.GetVisualSelection()<CR>
-    command Mru :Unite neomru/file
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
