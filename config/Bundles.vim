@@ -69,7 +69,8 @@
 " frontend
 "-----------------------------------------------------------------
     NeoBundleLazy 'mattn/emmet-vim', {
-                \ 'filetypes' : ['html', 'css']
+                \ 'filetypes' : [
+                \   'html', 'css', 'xml', 'vimwiki', 'markdown']
                 \ }
     NeoBundleLazy 'lilydjwg/colorizer', {
                 \ 'commands' : 'ColorToggle'
@@ -205,6 +206,7 @@
 "-----------------------------------------------------------------
     NeoBundle 'Shougo/neomru.vim'
     NeoBundle 'mhinz/vim-startify'
+    NeoBundle 'farseer90718/miscellaneous'
     NeoBundleLazy 'rhysd/clever-f.vim', {
                 \ 'mappings' : ['nxo', 'f', 'F', 't', 'T']
                 \ }
@@ -278,7 +280,6 @@
 "-----------------------------------------------------------------
 " filetype specific
 "-----------------------------------------------------------------
-    NeoBundle 'farseer90718/miscellaneous'
     NeoBundleLazy 'hynek/vim-python-pep8-indent', {
                 \ 'filetypes' : 'python',
                 \ }
@@ -312,6 +313,9 @@
                 \ }
     NeoBundleLazy 'moll/vim-node', {
                 \ 'filetypes' : 'javascript'
+                \ }
+    NeoBundleLazy 'elzr/vim-json', {
+                \ 'filetypes' : 'json'
                 \ }
     NeoBundleLazy 'marijnh/tern_for_vim', {
                 \ 'filetypes' : ['javascript']

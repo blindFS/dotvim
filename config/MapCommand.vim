@@ -127,14 +127,14 @@
     command! CtagsUpdate :cd ~/.vim | execute '!ctags -R '.$PWD
     command! AppendModeLine :call AppendModeline()
         function! AppendModeline()
-            let l:ml= " vim:ts=".&tabstop.":sw=".&shiftwidth.":tw=".&textwidth.":ft=".&filetype.":fdm=".&foldmethod.":fdl=".&foldlevel
-            let l:ml= substitute(&commentstring, "%s", l:ml, "")
-            call append(line("$"), l:ml)
+            let ml= " vim:ts=".&tabstop.":sw=".&shiftwidth.":tw=".&textwidth.":ft=".&filetype.":fdm=".&foldmethod.":fdl=".&foldlevel
+            let ml= substitute(&commentstring, "%s", ml, "")
+            call append(line("$"), ml)
         endfunction
     command! PluginConfig :call PluginAddComment()
         function! PluginAddComment()
             let line = getline('.')
-            exec 'e ~/.vim/config/GlobalVariables.vim'
+            exec 'e ~/.vim/config/PluginsConfig.vim'
             call s:add_commont(line)
         endfunction
 
@@ -146,12 +146,15 @@
                 if search('plugin - '.name, 'w') != 0
                     return
                 endif
-                global/====/nohlsearch
-                exec 'call append('.line('.').",'".'"--------------------------------------------------------------------------------------------------------------'."')"
-                exec 'call append('.line('.').",'".'" '.uri."')"
-                exec 'call append('.line('.').",'".'" plugin - '.name."')"
-                exec 'call append('.line('.').",'".'"--------------------------------------------------------------------------------------------------------------'."')"
-                normal 4j
+                call append(0, ['"--------------------------------------------------------------------------------------------------------------',
+                            \ '" plugin - '.name,
+                            \ '" '.uri,
+                            \ '"--------------------------------------------------------------------------------------------------------------',
+                            \ "if neobundle#tap('".name."')",
+                            \ '    call neobundle#untap()',
+                            \ 'endif'
+                            \ ])
+                5
             endif
         endfunction
 
@@ -186,7 +189,7 @@
             execute 'normal BvEy'
             let url = matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
             if url != ''
-                silent! execute '!xdg-open '.url | redraw!
+                call system('xdg-open '.url)
             else
                 echoerr 'No URL under cursor.'
             endif

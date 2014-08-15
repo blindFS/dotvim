@@ -100,7 +100,7 @@
     source ~/.vim/config/Environment.vim
     source ~/.vim/config/AutoCommand.vim
     source ~/.vim/config/MapCommand.vim
-    source ~/.vim/config/GlobalVariables.vim
+    source ~/.vim/config/PluginsConfig.vim
     runtime ftplugin/man.vim
 
 "------------------------------------------------------------------------------------------------------------------------------------

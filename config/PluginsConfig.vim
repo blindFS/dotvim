@@ -1,4 +1,3 @@
-"==============================================================================================================
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-exchange
 " https://github.com/tommcdo/vim-exchange.git
@@ -228,14 +227,6 @@ if neobundle#tap('NrrwRgn')
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - vim-markdown
-" https://github.com/plasticboy/vim-markdown.git
-"--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('vim-markdown')
-    let g:vim_markdown_initial_foldlevel=99
-    call neobundle#untap()
-endif
-"--------------------------------------------------------------------------------------------------------------
 " plugin - vim-regionsyntax
 " https://github.com/farseer90718/vim-regionsyntax.git
 "--------------------------------------------------------------------------------------------------------------
@@ -307,12 +298,19 @@ if neobundle#tap('syntastic')
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - YouCompleteMe
-" https://github.com/Valloric/YouCompleteMe.git
+" plugin - vim-json
+" https://github.com/elzr/vim-json.git
 "--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('YouCompleteMe')
-    let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/youcompleteme.rc.vim'
+if neobundle#tap('vim-json')
+    highlight default link jsonKeyword Keyword
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
+" plugin - vim-markdown
+" https://github.com/plasticboy/vim-markdown.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-markdown')
+    let g:vim_markdown_initial_foldlevel=99
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -557,10 +555,14 @@ if neobundle#tap('neosnippet.vim')
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
-" Web Design configurations
+" plugin - YouCompleteMe
+" https://github.com/Valloric/YouCompleteMe.git
 "--------------------------------------------------------------------------------------------------------------
-    let g:html_use_css                     = 1
-    let g:xml_syntax_folding               = 1
+if neobundle#tap('YouCompleteMe')
+    let neobundle#hooks.on_source =
+                \ '~/.vim/config/plugins/youcompleteme.rc.vim'
+    call neobundle#untap()
+endif
 
 "------------------------------------------------------------------------------------------------------------------------------------
     "                                  ..                                  _                      __ _                    _   _

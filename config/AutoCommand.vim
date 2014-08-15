@@ -2,17 +2,15 @@
 " Autocommands
 "-----------------------------------------------------------------
 " miscellaneous
-    autocmd BufWinEnter *                      setlocal formatoptions-=o | setlocal formatoptions+=j
-    autocmd BufRead,BufNewFile *.json          setlocal filetype=json
-    autocmd BufRead,BufNewFile *.less          setlocal filetype=css
-    autocmd BufRead,BufNewFile *.ejs           setlocal filetype=html
-    autocmd Filetype w3m,tagbar,unite,startify setlocal nocursorcolumn
-    autocmd FileType lisp,javascript           setlocal tabstop=2 shiftwidth=2
-    autocmd FileType lisp                      let b:delimitMate_autoclose = 0
-    autocmd FileType vim                       nnoremap <buffer> K :help <CR>
-    autocmd FileType vim                       vnoremap <buffer> K <ESC>:execute "help ".GetVisualSelection()<CR>
-    autocmd FileType tex                       setlocal noswapfile
-    autocmd Syntax man                         setlocal nomodifiable
+    autocmd BufWinEnter        *                         setlocal formatoptions-=o | setlocal formatoptions+=j
+    autocmd BufRead,BufNewFile *.less                    setlocal filetype=css
+    autocmd BufRead,BufNewFile *.ejs                     setlocal filetype=html
+    autocmd Filetype           w3m,tagbar,unite,startify setlocal nocursorcolumn
+    autocmd FileType           lisp,javascript           setlocal tabstop=2 shiftwidth=2
+    autocmd FileType           lisp                      let      b:delimitMate_autoclose = 0
+    autocmd FileType           vim                       nnoremap <buffer> K :help <CR>
+    autocmd FileType           vim                       vnoremap <buffer> K <ESC>:execute "help ".GetVisualSelection()<CR>
+    autocmd Syntax             man                       setlocal nomodifiable | setlocal readonly
     augroup haskmap
         autocmd!
         autocmd FileType haskell               inoremap <C-h>l <ESC>g_aa<ESC>C<Space>-><Space>
@@ -26,10 +24,10 @@
     autocmd InsertEnter * setlocal norelativenumber
 
 " folding
-    autocmd FileType html                                           setlocal foldmethod=manual
-    autocmd Filetype xml                                            setlocal foldmethod=syntax
-    autocmd Filetype vimwiki,perl,c,cpp,java,javascript,css,zsh,lua setlocal foldmethod=marker
-    autocmd Filetype vimwiki,perl,c,cpp,java,javascript,css,zsh,lua setlocal foldmarker={,}
+    let g:xml_syntax_folding               = 1
+    autocmd FileType html setlocal foldmethod=manual
+    autocmd Filetype vimwiki,perl,c,cpp,java,javascript,css,zsh,lua,json
+                \ setlocal foldmethod=marker | setlocal foldmarker={,}
 
 " restore
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
