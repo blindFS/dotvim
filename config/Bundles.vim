@@ -129,7 +129,8 @@
                 \ 'unite_sources' : 'apropos'
                 \ }
     NeoBundleLazy 'farseer90718/unite-workflow', {
-                \ 'unite_sources' : 'github',
+                \ 'unite_sources' : [
+                \   'github', 'gist'],
                 \ 'depends' : 'mattn/webapi-vim'
                 \ }
     NeoBundleLazy 'farseer90718/unite-character', {

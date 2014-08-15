@@ -81,13 +81,15 @@
 "-----------------------------------------------------------------
     filetype off
     set runtimepath+=~/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/.vim/bundle/'))
+    call neobundle#begin(expand('~/.vim/bundle/'))
     if neobundle#has_cache()
         NeoBundleLoadCache
     else
         source ~/.vim/config/Bundles.vim
         NeoBundleSaveCache
     endif
+    call neobundle#end()
+
     filetype plugin indent on
     if &term =~ 'linux'
         colorscheme darkblue
