@@ -244,6 +244,9 @@
     NeoBundleLazy 'tommcdo/vim-exchange', {
                 \ 'mappings' : ['nx', '<Plug>(Exchange']
                 \ }
+    NeoBundleLazy 'osyo-manga/vim-jplus', {
+                \ 'mappings' : '<Plug>(jplus'
+                \ }
     NeoBundleLazy 'renumber.vim', {
                 \ 'commands' : 'Renumber'
                 \ }
