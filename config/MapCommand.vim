@@ -208,6 +208,11 @@
                 endif
             endtry
         endfunction
+    command! CurSyntax :call GetCurrentSyntax()
+        function! GetCurrentSyntax()
+            let syname = synIDattr(synID(line('.'), col('.'), 1), 'name')
+            execute 'highlight '.syname
+        endfunction
 "-----------------------------------------------------------------
 " alias
 "-----------------------------------------------------------------

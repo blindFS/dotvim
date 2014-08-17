@@ -204,6 +204,7 @@ endif
 " https://github.com/farseer90718/vim-translator.git
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-translator')
+    let g:translate_cmd = 'ydcv'
     vmap T <Plug>Translate
     vmap R <Plug>TranslateReplace
     vmap P <Plug>TranslateSpeak
