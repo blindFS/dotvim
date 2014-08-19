@@ -130,7 +130,7 @@
                 \ }
     NeoBundleLazy 'farseer90718/unite-workflow', {
                 \ 'unite_sources' : [
-                \   'github', 'gist'],
+                \   'github', 'gist', 'v2ex'],
                 \ 'depends' : [
                 \   'mattn/webapi-vim',
                 \   'mattn/gist-vim']

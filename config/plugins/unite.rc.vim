@@ -8,7 +8,7 @@ call unite#custom#profile('default', 'context', {
             \ 'ignore_case' : 1,
             \ 'smart_case' : 1,
             \ 'winheight' : 10,
-            \ 'direction' : 'topleft',
+            \ 'direction' : 'botright',
             \ 'cursor-line-highlight' : 'Statusline',
             \ 'prompt' : '➤ '
             \ })

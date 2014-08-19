@@ -122,7 +122,7 @@
 "-----------------------------------------------------------------
     command! -complete=file -nargs=1 Rjpg :read !jp2a <q-args>
     command! EclimCleanUp :!rm -f __eclim_temp_*
-    command! Xopen :!xdg-open % &
+    command! Xopen :call system('xdg-open '.expand('%'))
     command! VShell :set noautochdir | VimShell
     command! CtagsUpdate :cd ~/.vim | execute '!ctags -R '.$PWD
     command! AppendModeLine :call AppendModeline()
