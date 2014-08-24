@@ -204,7 +204,7 @@ endif
 " https://github.com/farseer90718/vim-translator.git
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-translator')
-    let g:translate_cmd = 'ydcv'
+    " let g:translate_cmd = 'ydcv'
     vmap T <Plug>Translate
     vmap R <Plug>TranslateReplace
     vmap P <Plug>TranslateSpeak
@@ -270,18 +270,6 @@ endif
 if neobundle#tap('slimv')
     let g:slimv_impl     = 'sbcl'
     let g:paredit_leader = ','
-    call neobundle#untap()
-endif
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vim-github-dashboard
-" https://github.com/junegunn/vim-github-dashboard.git
-"--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('vim-github-dashboard')
-    let g:github_dashboard = {
-                \ 'username': 'farseer90718',
-                \ 'api_open_timeout': 10,
-                \ 'api_read_timeout': 20,
-                \ 'statusline': 0}
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------

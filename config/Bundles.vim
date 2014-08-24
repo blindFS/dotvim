@@ -62,9 +62,6 @@
                 \ 'commands' : 'Gissues',
                 \ 'disabled' : !has('python')
                 \ }
-    NeoBundleLazy 'junegunn/vim-github-dashboard', {
-                \ 'commands' : 'GHDashboard'
-                \ }
 "-----------------------------------------------------------------
 " frontend
 "-----------------------------------------------------------------
@@ -125,12 +122,12 @@
     NeoBundleLazy 'tacroe/unite-mark', {
                 \ 'unite_sources' : 'mark'
                 \ }
-    NeoBundleLazy 'farseer90718/unite-apropos', {
-                \ 'unite_sources' : 'apropos'
-                \ }
     NeoBundleLazy 'farseer90718/unite-workflow', {
+                \ 'disabled' : !has('python'),
                 \ 'unite_sources' : [
-                \   'github', 'gist', 'v2ex'],
+                \   'github', 'gist', 'v2ex',
+                \   'reddit', 'youdao', 'apropos',
+                \   'wikipedia', 'toilet', 'emoji'],
                 \ 'depends' : [
                 \   'mattn/webapi-vim',
                 \   'mattn/gist-vim']

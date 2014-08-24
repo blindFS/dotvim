@@ -3,14 +3,31 @@ call unite#custom#source('command, function',
             \ 'matchers', 'matcher_fuzzy')
 call unite#custom#source('neomru/file',
             \ 'matchers', 'matcher_context')
-call unite#custom#profile('default', 'context', {
-            \ 'start_insert' : 1,
-            \ 'ignore_case' : 1,
-            \ 'smart_case' : 1,
-            \ 'winheight' : 10,
-            \ 'direction' : 'botright',
-            \ 'cursor-line-highlight' : 'Statusline',
-            \ 'prompt' : '➤ '
+call unite#custom#profile('default',
+            \ 'context', {
+            \   'start_insert' : 1,
+            \   'ignore_case' : 1,
+            \   'smart_case' : 1,
+            \   'winheight' : 10,
+            \   'direction' : 'botright',
+            \   'cursor-line-highlight' : 'Statusline',
+            \   'prompt' : '➤ '
+            \ })
+let g:unite#workflow#reddit#front = 'http://www.reddit.com/.json?feed=7e382702f6cfd8bf0db677c9d5f24b946ad737b4&user=farseer90718'
+call unite#custom#profile(
+            \ 'source/github/search, source/github/event, '.
+            \ 'source/github/feed, source/gist/search, '.
+            \ 'source/gist/user, source/v2ex, '.
+            \ 'source/reddit, source/wikipedia',
+            \ 'context', {
+            \   'keep_focus' : 1,
+            \   'no_quit' : 1
+            \ })
+call unite#custom#profile(
+            \ 'source/youdao, source/toilet',
+            \ 'context', {
+            \   'max_multi_lines' : 20,
+            \   'winheight' : 20,
             \ })
 let g:unite_data_directory                = $HOME.'/tmp/unite'
 let g:unite_source_grep_max_candidates    = 30
@@ -40,5 +57,6 @@ nnoremap <leader>gg :UniteWithCursorWord gtags/def<CR>
 nnoremap <leader>gc :UniteWithCursorWord gtags/completion<CR>
 nnoremap <leader>gr :Unite gtags/ref<CR>
 nnoremap <leader>ge :Unite gtags/grep<CR>
+nnoremap <leader>t  :Unite youdao:<CR>
 command!  Mru :Unite neomru/file
 command!  Uhelp :Unite help

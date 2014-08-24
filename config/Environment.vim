@@ -6,7 +6,7 @@
     endif
     if has('unix')
         " set guifont=monofur\ 12
-        set guifont=novamono\ 12
+        set guifont=novamono\ 15
     endif
     " multi font coding support
     if has("multi_byte")
