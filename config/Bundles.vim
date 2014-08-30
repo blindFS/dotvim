@@ -59,7 +59,7 @@
                 \ 'depends' : ['mattn/webapi-vim']
                 \ }
     NeoBundleLazy 'jaxbot/github-issues.vim', {
-                \ 'commands' : 'Gissues',
+                \ 'commands' : ['Gissues', 'Giedit', 'Giadd'],
                 \ 'disabled' : !has('python')
                 \ }
 "-----------------------------------------------------------------
@@ -127,10 +127,12 @@
                 \ 'unite_sources' : [
                 \   'github', 'gist', 'v2ex',
                 \   'reddit', 'youdao', 'apropos',
-                \   'wikipedia', 'toilet', 'emoji'],
+                \   'wikipedia', 'youtube', 'toilet',
+                \   'emoji', 'musicbox', 'twitter'],
                 \ 'depends' : [
                 \   'mattn/webapi-vim',
-                \   'mattn/gist-vim']
+                \   'mattn/gist-vim',
+                \   'jaxbot/github-issues.vim']
                 \ }
     NeoBundleLazy 'farseer90718/unite-character', {
                 \ 'commands' : ['SearchUnicode', 'HTMLUnicode'],

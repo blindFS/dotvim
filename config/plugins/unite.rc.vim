@@ -8,7 +8,9 @@ call unite#custom#profile('default',
             \   'start_insert' : 1,
             \   'ignore_case' : 1,
             \   'smart_case' : 1,
-            \   'winheight' : 10,
+            \   'winheight' : 15,
+            \   'max_multi_lines' : 20,
+            \   'update_time' : 200,
             \   'direction' : 'botright',
             \   'cursor-line-highlight' : 'Statusline',
             \   'prompt' : '➤ '
@@ -17,17 +19,11 @@ let g:unite#workflow#reddit#front = 'http://www.reddit.com/.json?feed=7e382702f6
 call unite#custom#profile(
             \ 'source/github/search, source/github/event, '.
             \ 'source/github/feed, source/gist/search, '.
-            \ 'source/gist/user, source/v2ex, '.
-            \ 'source/reddit, source/wikipedia',
+            \ 'source/gist/user, source/v2ex, source/youtube, '.
+            \ 'source/reddit, source/wikipedia, source/twitter',
             \ 'context', {
             \   'keep_focus' : 1,
             \   'no_quit' : 1
-            \ })
-call unite#custom#profile(
-            \ 'source/youdao, source/toilet',
-            \ 'context', {
-            \   'max_multi_lines' : 20,
-            \   'winheight' : 20,
             \ })
 let g:unite_data_directory                = $HOME.'/tmp/unite'
 let g:unite_source_grep_max_candidates    = 30
@@ -38,7 +34,8 @@ if executable('ag')
                 \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
 endif
-nnoremap <Leader><space>  :Unite<CR>
+nnoremap <Leader><space>  :Unite -keep-focus -no-quit<CR>
+nnoremap <Leader><space>r :UniteResume<CR>
 nnoremap <Leader><space>b :Unite buffer_tab<CR>
 nnoremap <leader><space>B :Unite buffer<CR>
 nnoremap <leader><space>c :Unite command<CR>
@@ -57,6 +54,6 @@ nnoremap <leader>gg :UniteWithCursorWord gtags/def<CR>
 nnoremap <leader>gc :UniteWithCursorWord gtags/completion<CR>
 nnoremap <leader>gr :Unite gtags/ref<CR>
 nnoremap <leader>ge :Unite gtags/grep<CR>
-nnoremap <leader>t  :Unite youdao:<CR>
+nnoremap <leader>t  :Unite youdao:<C-R><C-W><CR>
 command!  Mru :Unite neomru/file
 command!  Uhelp :Unite help
