@@ -29,7 +29,8 @@
     NeoBundleLazy 'thinca/vim-ref', {
                 \ 'commands' : {'name' : 'Ref',
                 \   'complete' : 'customlist,ref#complete'},
-                \ 'unite_sources' : 'ref'
+                \ 'unite_sources' : 'ref',
+                \ 'mappings' : '<Plug>(ref-'
                 \ }
     NeoBundleLazy 'LnL7/vim-mark', {
                 \ 'commands' : ['Mark', 'Marks', 'MarkClear', 'MarkSave', 'MarkLoad'],
@@ -128,7 +129,8 @@
                 \   'github', 'gist', 'v2ex',
                 \   'reddit', 'youdao', 'apropos',
                 \   'wikipedia', 'youtube', 'toilet',
-                \   'emoji', 'musicbox', 'twitter'],
+                \   'emoji', 'musicbox', 'twitter',
+                \   'douban'],
                 \ 'depends' : [
                 \   'mattn/webapi-vim',
                 \   'mattn/gist-vim',
@@ -175,6 +177,10 @@
                 \ 'filetypes' :['c', 'cpp', 'python'],
                 \ 'build_commands' : 'cmake',
                 \ 'build' : {'unix' : './install.sh --clang-completer'},
+                \ 'disabled' : !has('python')
+                \ }
+    NeoBundleLazy 'davidhalter/jedi-vim', {
+                \ 'filetypes' : ['python'],
                 \ 'disabled' : !has('python')
                 \ }
 "-----------------------------------------------------------------
