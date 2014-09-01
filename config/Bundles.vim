@@ -130,7 +130,7 @@
                 \   'reddit', 'youdao', 'apropos',
                 \   'wikipedia', 'youtube', 'toilet',
                 \   'emoji', 'musicbox', 'twitter',
-                \   'douban'],
+                \   'douban', 'zhihu'],
                 \ 'depends' : [
                 \   'mattn/webapi-vim',
                 \   'mattn/gist-vim',
@@ -174,7 +174,7 @@
                 \ 'neosnippet', 'neosnippet/user', 'neosnippet/runtime'],
                 \ }
     NeoBundleLazy 'Valloric/YouCompleteMe', {
-                \ 'filetypes' :['c', 'cpp', 'python'],
+                \ 'filetypes' :['c', 'cpp'],
                 \ 'build_commands' : 'cmake',
                 \ 'build' : {'unix' : './install.sh --clang-completer'},
                 \ 'disabled' : !has('python')
