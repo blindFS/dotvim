@@ -20,7 +20,7 @@ call unite#custom#profile(
             \ 'source/github/search, source/github/event, '.
             \ 'source/github/feed, source/gist/search, '.
             \ 'source/gist/user, source/v2ex, source/youtube, '.
-            \ 'source/reddit, source/wikipedia, source/twitter',
+            \ 'source/reddit, source/wikipedia',
             \ 'context', {
             \   'keep_focus' : 1,
             \   'no_quit' : 1

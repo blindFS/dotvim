@@ -130,7 +130,9 @@
                 \   'reddit', 'youdao', 'apropos',
                 \   'wikipedia', 'youtube', 'toilet',
                 \   'emoji', 'musicbox', 'twitter',
-                \   'douban', 'zhihu'],
+                \   'douban', 'zhihu', 'turing',
+                \   'dropbox'
+                \ ],
                 \ 'depends' : [
                 \   'mattn/webapi-vim',
                 \   'mattn/gist-vim',
