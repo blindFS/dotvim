@@ -27,11 +27,12 @@ let g:tagbar_type_css = {
 let g:tagbar_type_tex = {
             \ 'ctagstype' : 'latex',
             \ 'kinds' : [
-            \ 'l:labels',
             \ 's:sections',
+            \ 'l:labels',
             \ 'd:definitions',
             \ 'e:environments'
-            \ ]
+            \ ],
+            \ 'sort' : 0
             \ }
 let g:tagbar_type_javascript = {
             \ 'ctagstype' : 'javascript',
