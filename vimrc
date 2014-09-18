@@ -82,6 +82,7 @@
     filetype off
     set runtimepath+=~/.vim/bundle/neobundle.vim/
     call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundle 'mhinz/vim-startify'
     if neobundle#has_cache()
         NeoBundleLoadCache
     else

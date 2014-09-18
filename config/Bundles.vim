@@ -188,7 +188,6 @@
 "-----------------------------------------------------------------
 " appearance
 "-----------------------------------------------------------------
-    NeoBundle 'mhinz/vim-startify'
     NeoBundle 'bling/vim-airline'
     NeoBundle 'joeytwiddle/sexy_scroller.vim'
     NeoBundle 'farseer90718/Rainbow-Parentheses-Improved-and2'
