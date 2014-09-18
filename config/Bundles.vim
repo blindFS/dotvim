@@ -188,6 +188,7 @@
 "-----------------------------------------------------------------
 " appearance
 "-----------------------------------------------------------------
+    NeoBundle 'mhinz/vim-startify'
     NeoBundle 'bling/vim-airline'
     NeoBundle 'joeytwiddle/sexy_scroller.vim'
     NeoBundle 'farseer90718/Rainbow-Parentheses-Improved-and2'
@@ -215,7 +216,6 @@
 " navigate
 "-----------------------------------------------------------------
     NeoBundle 'Shougo/neomru.vim'
-    NeoBundle 'mhinz/vim-startify'
     NeoBundle 'farseer90718/miscellaneous'
     NeoBundleLazy 'rhysd/clever-f.vim', {
                 \ 'mappings' : ['nxo', 'f', 'F', 't', 'T']
