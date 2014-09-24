@@ -28,6 +28,8 @@ let g:tagbar_type_tex = {
             \ 'ctagstype' : 'latex',
             \ 'kinds' : [
             \ 's:sections',
+            \ 'u:subsections',
+            \ 'b:subsubsections',
             \ 'l:labels',
             \ 'd:definitions',
             \ 'e:environments'
