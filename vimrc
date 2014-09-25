@@ -2,7 +2,7 @@
 " variables setting
 "-----------------------------------------------------------------
     syntax on
-    set autochdir
+    set noautochdir
     set autoindent
     set autoread
     set background=dark

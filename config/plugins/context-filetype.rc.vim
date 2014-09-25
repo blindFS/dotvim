@@ -17,6 +17,11 @@ let g:context_filetype#filetypes = {
             \    'end' : '^\s*}}}',
             \    'filetype' : '\1',
             \   },
+            \   {
+            \    'start' : '<script[^>]*>',
+            \    'end' : '<.script>',
+            \    'filetype' : 'javascript'
+            \   }
             \ ],
             \ 'tex': [
             \  {

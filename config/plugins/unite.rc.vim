@@ -15,7 +15,10 @@ call unite#custom#profile('default',
             \   'cursor-line-highlight' : 'Statusline',
             \   'prompt' : '➤ '
             \ })
-let g:unite#workflow#reddit#front = 'http://www.reddit.com/.json?feed=7e382702f6cfd8bf0db677c9d5f24b946ad737b4&user=farseer90718'
+let g:unite#workflow#reddit#front =
+            \ 'http://www.reddit.com/.json?'.
+            \ 'feed=7e382702f6cfd8bf0db677c9d5f24b946ad737b4'.
+            \ '&user=farseer90718'
 call unite#custom#profile(
             \ 'source/github/search, source/github/event, '.
             \ 'source/github/feed, source/gist/search, '.

@@ -120,10 +120,10 @@
 "-----------------------------------------------------------------
 " commands
 "-----------------------------------------------------------------
+    command! Pcd :cd %:p:h
     command! -complete=file -nargs=1 Rjpg :read !jp2a <q-args>
     command! EclimCleanUp :!rm -f __eclim_temp_*
     command! Xopen :call system('xdg-open '.expand('%'))
-    command! VShell :set noautochdir | VimShell
     command! CtagsUpdate :cd ~/.vim | execute '!ctags -R '.$PWD
     command! AppendModeLine :call AppendModeline()
         function! AppendModeline()
@@ -197,10 +197,11 @@
     command! Feh :call ViewImage()
         function! ViewImage()
             execute 'normal BvEy'
-            let path = matchstr(@0, '\v((file|local):[/\\]*)=\zs[.~/].*\.(jpg|png|gif|bmp)')
+            let path = matchstr(@0, '\v(\{\{)=\zs[.~/].*\.(jpg|png|gif|bmp)')
+            echom path
             try
                 if path != ''
-                    let path = &filetype == 'vimwiki' ? g:vimwiki_list[0].path . path : path
+                    let path = &filetype == 'vimwiki' ? g:vimwiki_list[0].path_html . path : path
                     silent! execute '!feh '.path.' &' | redraw!
                 else
                     let url = matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
@@ -216,14 +217,6 @@
 "-----------------------------------------------------------------
 " alias
 "-----------------------------------------------------------------
-    cnoreabbrev <expr> bu
-    \ ((getcmdtype() == ':' && getcmdpos() <= 3)? 'Unite neobundle/update'   : 'bu')
-    cnoreabbrev <expr> bl
-    \ ((getcmdtype() == ':' && getcmdpos() <= 3)? 'Unite neobundle'     : 'bl')
-    cnoreabbrev <expr> bi
-    \ ((getcmdtype() == ':' && getcmdpos() <= 3)? 'Unite neobundle/install'  : 'bi')
-    cnoreabbrev <expr> bc
-    \ ((getcmdtype() == ':' && getcmdpos() <= 3)? 'NeoBundleClean'    : 'bc')
     cnoreabbrev <expr> cg
     \ ((getcmdtype() == ':' && getcmdpos() <= 3)? 'cscope find g'    : 'cg')
     cnoreabbrev <expr> cs
