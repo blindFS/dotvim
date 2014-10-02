@@ -1,4 +1,19 @@
 "--------------------------------------------------------------------------------------------------------------
+" plugin - vim-textobj-python
+" https://github.com/bps/vim-textobj-python.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-textobj-python')
+    xmap af <Plug>(textobj-python-function-a)
+    omap af <Plug>(textobj-python-function-a)
+    xmap if <Plug>(textobj-python-function-i)
+    omap if <Plug>(textobj-python-function-i)
+    xmap ac <Plug>(textobj-python-class-a)
+    omap ac <Plug>(textobj-python-class-a)
+    xmap ic <Plug>(textobj-python-class-i)
+    omap ic <Plug>(textobj-python-class-i)
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
 " plugin - vim-jplus
 " https://github.com/osyo-manga/vim-jplus.git
 "--------------------------------------------------------------------------------------------------------------

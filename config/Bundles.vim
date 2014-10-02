@@ -41,6 +41,9 @@
                 \ 'commands' : 'Gitv',
                 \ 'depends' : ['tpope/vim-fugitive']
                 \ }
+    NeoBundleLazy 'mhinz/vim-randomtag', {
+                \ 'commands' : 'Random'
+                \ }
 "-----------------------------------------------------------------
 " lib
 "-----------------------------------------------------------------
@@ -289,6 +292,14 @@
     NeoBundleLazy 'mattn/vim-textobj-url', {
                 \ 'depends' : 'kana/vim-textobj-user',
                 \ 'mappings' : ['ox', 'au', 'iu']}
+    NeoBundleLazy 'bps/vim-textobj-python', {
+                \ 'depends' : 'kana/vim-textobj-user',
+                \ 'filetypes' : 'python'
+                \ }
+    NeoBundleLazy 'rbonvall/vim-textobj-latex', {
+                \ 'depends' : 'kana/vim-textobj-user',
+                \ 'filetypes' : 'tex'
+                \ }
 "-----------------------------------------------------------------
 " filetype specific
 "-----------------------------------------------------------------
@@ -299,29 +310,29 @@
                 \ 'mappings' : '<Plug>Vimwiki'
                 \ }
     NeoBundleLazy 'gerw/vim-latex-suite', {
-                \ 'filetypes' : ['tex']
+                \ 'filetypes' : 'tex'
                 \ }
     NeoBundleLazy 'vim-perl/vim-perl', {
-                \ 'filetypes' : ['perl']
+                \ 'filetypes' : 'perl'
                 \ }
     NeoBundleLazy 'farseer90718/vim-markdown', {
-                \ 'filetypes' : ['markdown']
+                \ 'filetypes' : 'markdown'
                 \ }
     NeoBundleLazy 'farseer90718/vim-reveal', {
-                \ 'filetypes' : ['markdown']
+                \ 'filetypes' : 'markdown'
                 \ }
     NeoBundleLazy 'eagletmt/neco-ghc', {
-                \ 'filetypes' : ['haskell'],
+                \ 'filetypes' : 'haskell',
                 \ 'external_commands' : 'ghc-mod'
                 \ }
     NeoBundleLazy 'eagletmt/ghcmod-vim', {
-                \ 'filetypes' : ['haskell']
+                \ 'filetypes' : 'haskell'
                 \ }
     NeoBundleLazy 'dag/vim2hs', {
-                \ 'filetypes' : ['haskell']
+                \ 'filetypes' : 'haskell'
                 \ }
     NeoBundleLazy 'wannesm/wmgraphviz.vim', {
-                \ 'filetypes' : ['dot']
+                \ 'filetypes' : 'dot'
                 \ }
     NeoBundleLazy 'moll/vim-node', {
                 \ 'filetypes' : 'javascript'
@@ -330,10 +341,10 @@
                 \ 'filetypes' : 'json'
                 \ }
     NeoBundleLazy 'marijnh/tern_for_vim', {
-                \ 'filetypes' : ['javascript']
+                \ 'filetypes' : 'javascript'
                 \ }
     NeoBundleLazy 'eclim', {
-                \ 'filetypes' : ['java']
+                \ 'filetypes' : 'java'
                 \ }
     NeoBundleLazy 'https://bitbucket.org/kovisoft/slimv', {
                 \ 'filetypes' : ['lisp', 'scheme'],
