@@ -3,14 +3,17 @@
 " https://github.com/bps/vim-textobj-python.git
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-textobj-python')
-    xmap af <Plug>(textobj-python-function-a)
-    omap af <Plug>(textobj-python-function-a)
-    xmap if <Plug>(textobj-python-function-i)
-    omap if <Plug>(textobj-python-function-i)
-    xmap ac <Plug>(textobj-python-class-a)
-    omap ac <Plug>(textobj-python-class-a)
-    xmap ic <Plug>(textobj-python-class-i)
-    omap ic <Plug>(textobj-python-class-i)
+    augroup pythonObj
+        autocmd!
+        autocmd FileType python xmap <buffer> af <Plug>(textobj-python-function-a)
+        autocmd FileType python omap <buffer> af <Plug>(textobj-python-function-a)
+        autocmd FileType python xmap <buffer> if <Plug>(textobj-python-function-i)
+        autocmd FileType python omap <buffer> if <Plug>(textobj-python-function-i)
+        autocmd FileType python xmap <buffer> ac <Plug>(textobj-python-class-a)
+        autocmd FileType python omap <buffer> ac <Plug>(textobj-python-class-a)
+        autocmd FileType python xmap <buffer> ic <Plug>(textobj-python-class-i)
+        autocmd FileType python omap <buffer> ic <Plug>(textobj-python-class-i)
+    augroup END
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
