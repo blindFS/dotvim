@@ -178,6 +178,12 @@
                 \ 'unite_sources' : [
                 \ 'neosnippet', 'neosnippet/user', 'neosnippet/runtime'],
                 \ }
+    NeoBundleLazy 'Shougo/echodoc.vim', {
+                \ 'insert' : 1
+                \ }
+    NeoBundleLazy 'ujihisa/neco-look', {
+                \ 'filetypes' : ['markdown', 'vimwiki', 'text']
+                \ }
     NeoBundleLazy 'Valloric/YouCompleteMe', {
                 \ 'filetypes' :['c', 'cpp'],
                 \ 'build_commands' : 'cmake',
@@ -261,17 +267,14 @@
     NeoBundleLazy 'renumber.vim', {
                 \ 'commands' : 'Renumber'
                 \ }
-    NeoBundleLazy 'tComment', {
-                \ 'mappings' : 'gc'
+    NeoBundleLazy 'tyru/caw.vim', {
+                \ 'mappings' : '<Plug>(caw'
                 \ }
 "-----------------------------------------------------------------
 " textobj
 "-----------------------------------------------------------------
     NeoBundleLazy 'gcmt/wildfire.vim', {
                 \ 'mappings' : '<Plug>(wildfire-'
-                \ }
-    NeoBundleLazy 'coderifous/textobj-word-column.vim', {
-                \ 'mappings' : ['xo' , 'ac', 'ic']
                 \ }
     NeoBundleLazy 'thinca/vim-textobj-between', {
                 \ 'depends' : 'kana/vim-textobj-user',

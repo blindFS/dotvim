@@ -1,4 +1,35 @@
 "--------------------------------------------------------------------------------------------------------------
+" plugin - echodoc.vim
+" https://github.com/Shougo/echodoc.vim.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('echodoc.vim')
+    let g:echodoc_enable_at_startup = 1
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
+" plugin - caw.vim
+" https://github.com/tyru/caw.vim.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('caw.vim')
+    autocmd FileType * call s:init_caw()
+    function! s:init_caw()
+        if !&l:modifiable
+            silent! nunmap <buffer> gc
+            silent! xunmap <buffer> gc
+            silent! vunmap <buffer> gc
+            silent! nunmap <buffer> gcc
+            silent! xunmap <buffer> gcc
+        else
+            nmap <buffer> gc <Plug>(caw:prefix)
+            xmap <buffer> gc <Plug>(caw:prefix)
+            vmap <buffer> gc <Plug>(caw:i:toggle)
+            nmap <buffer> gcc <Plug>(caw:i:toggle)
+            xmap <buffer> gcc <Plug>(caw:i:toggle)
+        endif
+    endfunction
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
 " plugin - vim-textobj-python
 " https://github.com/bps/vim-textobj-python.git
 "--------------------------------------------------------------------------------------------------------------
