@@ -167,7 +167,7 @@
                 \ 'mappings' : '<Plug>(vimshell_'
                 \ }
     NeoBundleLazy 'Shougo/neocomplete.vim', {
-                \ 'depends' : 'Shougo/context_filetype.vim',
+                \ 'depends' : ['Shougo/context_filetype.vim', 'ujihisa/neco-look'],
                 \ 'insert' : 1,
                 \ 'disabled' : (!has('lua') || v:version < 704)
                 \ }
@@ -180,9 +180,6 @@
                 \ }
     NeoBundleLazy 'Shougo/echodoc.vim', {
                 \ 'insert' : 1
-                \ }
-    NeoBundleLazy 'ujihisa/neco-look', {
-                \ 'filetypes' : ['markdown', 'vimwiki', 'text']
                 \ }
     NeoBundleLazy 'Valloric/YouCompleteMe', {
                 \ 'filetypes' :['c', 'cpp'],

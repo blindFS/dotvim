@@ -431,8 +431,7 @@ endif
 " https://github.com/Shougo/unite.vim
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('unite.vim')
-    let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/unite.rc.vim'
+    source ~/.vim/config/plugins/unite.rc.vim
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
