@@ -1,7 +1,8 @@
 let g:regionsyntax_ft_trans = {
             \ 'ini' : 'dosini',
             \ 'js' : 'javascript',
-            \ 'basemake' : 'make'
+            \ 'basemake' : 'make',
+            \ 'bat' : 'dosbatch'
             \ }
 let g:regionsyntax_map = {
             \ 'tex' :
