@@ -29,6 +29,7 @@ call unite#custom#profile(
             \   'no_quit' : 1
             \ })
 let g:unite_data_directory                = $HOME.'/tmp/unite'
+let g:unite_source_history_yank_enable    = 1
 let g:unite_source_grep_max_candidates    = 30
 if executable('ag')
     let g:unite_source_grep_command       = 'ag'

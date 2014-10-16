@@ -132,7 +132,7 @@
                 \   'github', 'gist', 'v2ex',
                 \   'reddit', 'youdao', 'apropos',
                 \   'wikipedia', 'youtube', 'toilet',
-                \   'emoji', 'musicbox', 'twitter',
+                \   'emoji', 'music163', 'twitter',
                 \   'douban', 'zhihu', 'turing',
                 \   'dropbox'
                 \ ],
