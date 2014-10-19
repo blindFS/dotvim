@@ -197,7 +197,7 @@
     command! Feh :call ViewImage()
         function! ViewImage()
             execute 'normal BvEy'
-            let path = matchstr(@0, '\v(\{\{)=\zs[.~/].*\.(jpg|png|gif|bmp)')
+            let path = matchstr(@0, '\v^[ \t]*(\{\{)=\zs[.~/].*\.(jpg|png|gif|bmp)')
             try
                 if path != ''
                     let path = &filetype == 'vimwiki' ? g:vimwiki_list[0].path_html . path : path
