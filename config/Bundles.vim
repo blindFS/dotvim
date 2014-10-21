@@ -231,6 +231,9 @@
     NeoBundleLazy 'majutsushi/tagbar', {
                 \ 'commands' : 'TagbarToggle'
                 \ }
+    NeoBundleLazy 'haya14busa/incsearch.vim', {
+                \ 'mappings' : '<Plug>(incsearch-'
+                \ }
 "-----------------------------------------------------------------
 " text trimming
 "-----------------------------------------------------------------
