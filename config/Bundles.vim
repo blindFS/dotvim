@@ -84,6 +84,7 @@
 " Unite.vim
 "-----------------------------------------------------------------
     NeoBundle 'Shougo/unite.vim'
+    NeoBundleLazy 'Shougo/unite-build'
     NeoBundleLazy 'Shougo/vimfiler.vim', {
                 \ 'depends' : 'Shougo/unite.vim',
                 \ 'commands' : [
@@ -222,6 +223,7 @@
 "-----------------------------------------------------------------
     NeoBundle 'Shougo/neomru.vim'
     NeoBundle 'farseer90718/miscellaneous'
+    NeoBundle 'Shougo/tabpagebuffer.vim'
     NeoBundleLazy 'rhysd/clever-f.vim', {
                 \ 'mappings' : ['nxo', 'f', 'F', 't', 'T']
                 \ }
