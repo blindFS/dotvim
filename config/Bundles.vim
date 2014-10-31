@@ -266,9 +266,6 @@
     NeoBundleLazy 'osyo-manga/vim-jplus', {
                 \ 'mappings' : '<Plug>(jplus'
                 \ }
-    NeoBundleLazy 'renumber.vim', {
-                \ 'commands' : 'Renumber'
-                \ }
     NeoBundleLazy 'tyru/caw.vim', {
                 \ 'mappings' : '<Plug>(caw'
                 \ }
@@ -317,9 +314,6 @@
     NeoBundleLazy 'gerw/vim-latex-suite', {
                 \ 'filetypes' : 'tex'
                 \ }
-    NeoBundleLazy 'vim-perl/vim-perl', {
-                \ 'filetypes' : 'perl'
-                \ }
     NeoBundleLazy 'farseer90718/vim-markdown', {
                 \ 'filetypes' : 'markdown'
                 \ }
@@ -338,9 +332,6 @@
                 \ }
     NeoBundleLazy 'wannesm/wmgraphviz.vim', {
                 \ 'filetypes' : 'dot'
-                \ }
-    NeoBundleLazy 'cypok/vim-sml', {
-                \ 'filetypes' : 'sml'
                 \ }
     NeoBundleLazy 'moll/vim-node', {
                 \ 'filetypes' : 'javascript'

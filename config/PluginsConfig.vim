@@ -75,9 +75,9 @@ if neobundle#tap('vim-jplus')
     vmap <Leader>J <Plug>(jplus-input)
     let g:jplus#config = {
                 \   "_" : {
-                \       "delimiter_format" : ' %d '
+                \       "delimiter_format" : '%d'
                 \   }
-                \}
+                \ }
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
