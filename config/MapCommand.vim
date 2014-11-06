@@ -54,6 +54,51 @@
 "-----------------------------------------------------------------
 " miscellaneous
 "-----------------------------------------------------------------
+    function! Wiki2Org()
+        let b:enter_block = 0
+        let b:ordered_index = {}
+        let total_line = line("$")
+        for lino in range(1, total_line)
+            let line_content = getline(lino)
+            if line_content =~ '^[\t ]*{{{class=.\w*.'
+                let b:enter_block = 1
+                execute lino.'s/^[\t ]*{{{class=.\(\w*\)./#+begin_src \1'
+            elseif line_content =~ '^[\t ]*}}}[\t ]*$'
+                let b:enter_block = 0
+                execute lino.'s/^[\t ]*}}}[\t ]*$/#+end_src'
+            elseif !b:enter_block
+                if line_content =~ '^[\t ]*|[-|]\+|[\t ]*$'
+                    silent! execute lino.'s/-|-/-+-/g'
+                endif
+                silent! execute lino.'s/\[\[\([^\[\]]*\)\]\]/\="\[\[file:".substitute(submatch(1), " ", "%20", "g").".org\]\[".submatch(1)."\]\]"/g'
+                silent! execute lino.'s/{{\([^{}]*\)}}/\[\[file:\1\]\]/g'
+                silent! execute lino.'s/^[\t ]*\zs\*/+/g'
+                silent! execute lino.'s/\$\([^$]*\)\$/\\[\1\\]/g'
+                silent! execute lino.'s/`\([^`]*\)`/\~\1\~/g'
+                silent! execute lino.'s:_\([^_]*\)_:/\1/:g'
+                silent! execute lino.'s/^[\t ]*\(=\+\)\([^=]*\)=\+/\1\2'
+                if line_content =~ '^[\t ]*=\+'
+                    execute lino.'s/=/*/g'
+                endif
+                if line_content =~ '^[\t ]*#\s*'
+                    let level = len(matchstr(line_content, '^\s*\ze#'))/&shiftwidth+1
+                    let right_index = get(b:ordered_index, level, 0)
+                    if !right_index
+                        let b:ordered_index[level] = 2
+                        let right_index = 1
+                    else
+                        let b:ordered_index[level] += 1
+                    endif
+                    execute lino.'s/^[\t ]*\zs#/'.right_index."."
+                elseif line_content !~ '^[\t ]*[*-]'
+                    let b:ordered_index = {}
+                endif
+            endif
+        endfor
+        %s/[\t ]*$//g
+        execute 'w! ~/Dropbox/org/'.substitute(expand("%:t:r"), '\s', '\\ ', 'g').'.org'
+        edit!
+    endfunction
     " toggle fold
     nnoremap <silent><space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
     " select pasted area
