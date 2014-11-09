@@ -267,7 +267,6 @@
                 else
                     silent! execute 'e ' . fnameescape(file)
                     call Wiki2Org()
-                    bdelete!
                 endif
             endfor
             echom 'finished'
