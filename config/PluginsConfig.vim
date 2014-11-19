@@ -284,7 +284,7 @@ if neobundle#tap('vim-taskwarrior')
     let g:task_report_name              = 'long'
     let g:task_highlight_field          = 1
     let g:task_field_highlight_advanced = ''
-    let g:task_default_prompt           = ['description', 'due', 'priority', 'tag', 'depend']
+    let g:task_default_prompt           = ['proj', 'description', 'due', 'priority', 'tag', 'depend']
     let g:task_rc_override              = ''
     call neobundle#untap()
 endif

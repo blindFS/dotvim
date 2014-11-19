@@ -121,8 +121,8 @@
 " commands
 "-----------------------------------------------------------------
     command! Pcd :cd %:p:h
+    command! Zeal :call system('zeal -q '.expand('<cword>'))
     command! -complete=file -nargs=1 Rjpg :read !jp2a <q-args>
-    command! EclimCleanUp :!rm -f __eclim_temp_*
     command! Xopen :call system('xdg-open '.expand('%'))
     command! CtagsUpdate :cd ~/.vim | execute '!ctags -R '.$PWD
     command! AppendModeLine :call AppendModeline()
@@ -233,7 +233,7 @@
                     silent! execute lino.'s/\[\[\([^\[\]]*\)\]\]/\="\[\[file:".substitute(submatch(1), " ", "%20", "g").".org\]\[".submatch(1)."\]\]"/g'
                     silent! execute lino.'s/{{\([^{}]*\)}}/\[\[file:\1\]\]/g'
                     silent! execute lino.'s/^[\t ]*\zs\*/+/g'
-                    silent! execute lino.'s/\$\([^`$]*\)\$/\\[\1\\]/g'
+                    silent! execute lino.'s/\$\([^`$]*\)\$/\\(\1\\)/g'
                     silent! execute lino.'s/`\([^`]*\)`/\~\1\~/g'
                     silent! execute lino.'s/^[\t ]*\(=\+\)\([^=]*\)=\+/\1\2'
                     if line_content =~ '^[\t ]*=\+'
@@ -255,13 +255,13 @@
                 endif
             endfor
             %s/[\t ]*$//g
-            execute 'w! ~/Dropbox/org/'.substitute(expand("%:t:r"), '\s', '\\ ', 'g').'.org'
+            execute 'w! ~/Dropbox/org/notes/'.substitute(expand("%:t:r"), '\s', '\\ ', 'g').'.org'
             edit!
         endfunction
 
         function! Allwiki2Org() abort
             for file in systemlist('ls ~/Dropbox/vimwiki/*.wiki')
-                let target = substitute(substitute(file, 'wiki$', 'org', ''), 'Dropbox.vimwiki', 'Dropbox/org', '')
+                let target = substitute(substitute(file, 'wiki$', 'org', ''), 'Dropbox.vimwiki', 'Dropbox/org/notes', '')
                 if str2nr(system('date +%s -r ' . shellescape(file))[:-2]) <
                             \ str2nr(system('date +%s -r ' . shellescape(target))[:-2])
                 else
