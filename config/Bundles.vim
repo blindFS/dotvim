@@ -342,9 +342,6 @@
     NeoBundleLazy 'marijnh/tern_for_vim', {
                 \ 'filetypes' : 'javascript'
                 \ }
-    NeoBundleLazy 'eclim', {
-                \ 'filetypes' : 'java'
-                \ }
     NeoBundleLazy 'https://bitbucket.org/kovisoft/slimv', {
                 \ 'filetypes' : ['lisp', 'scheme'],
                 \ 'type' : 'hg'

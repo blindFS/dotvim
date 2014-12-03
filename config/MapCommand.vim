@@ -58,11 +58,6 @@
     nnoremap <silent><space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
     " select pasted area
     nnoremap <expr> gpv '`['.strpart(getregtype(), 0, 1).'`]'
-    " cscope
-    nmap <F12> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files ;<CR>
-      \:!cscope -b -i cscope.files -f cscope.out<CR>
-      \:cs kill -1<CR>:cs add cscope.out<CR>
-      \:!rm cscope.files<CR>
     " command hist
     cmap <C-f> <C-f>h:call <SID>GetCmdHis()<CR>
         function! s:GetCmdHis()
@@ -104,14 +99,6 @@
     vnoremap j gj
     vnoremap gk k
     vnoremap gj j
-"-----------------------------------------------------------------
-" search&replace
-"-----------------------------------------------------------------
-    " nnoremap / /\v  " auto very magic
-    " nnoremap ? ?\v
-    nnoremap 'r :%s:::gc<Left><Left><Left><Left>
-    nnoremap 'g :%g::<Left>
-    cnoremap '\ \(\)<Left><Left>
 "-----------------------------------------------------------------
 " source
 "-----------------------------------------------------------------

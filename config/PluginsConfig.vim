@@ -219,15 +219,6 @@ if neobundle#tap('vim-multiple-cursors')
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - eclim
-" http://eclim.org/gettingstarted.html
-"--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('eclim')
-    let g:EclimJavaCompleteCaseSensitive = 0
-    let g:EclimCompletionMethod          = 'omnifunc'
-    call neobundle#untap()
-endif
-"--------------------------------------------------------------------------------------------------------------
 " plugin - wmgraphviz.vim
 " https://github.com/wannesm/wmgraphviz.vim.git
 "--------------------------------------------------------------------------------------------------------------
