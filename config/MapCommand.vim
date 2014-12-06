@@ -228,6 +228,7 @@
                     endif
                     if line_content =~ '^[\t ]*#\s*'
                         let level = len(matchstr(line_content, '^\s*\ze#'))/&shiftwidth+1
+                        call filter(b:ordered_index, 'str2nr(v:key) <= level')
                         let right_index = get(b:ordered_index, level, 0)
                         if !right_index
                             let b:ordered_index[level] = 2
