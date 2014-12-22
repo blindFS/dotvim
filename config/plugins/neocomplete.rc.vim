@@ -1,5 +1,5 @@
 let g:neocomplete#disable_auto_complete            = 0
-let g:neocomplete#enable_auto_select               = 1
+let g:neocomplete#enable_auto_select               = 0
 let g:neocomplete#force_overwrite_completefunc     = 1
 let g:neocomplete#enable_at_startup                = 1
 let g:neocomplete#enable_camel_case                = 1

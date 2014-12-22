@@ -38,6 +38,10 @@ if executable('ag')
                 \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
 endif
+let g:unite_source_outline_info = {}
+let g:unite_source_outline_info.vimwiki = {
+    \ 'heading' : '^[ \t]*=\+.*=\+$'
+    \ }
 nnoremap <Leader><space>  :Unite -keep-focus -no-quit<CR>
 nnoremap <Leader><space>r :UniteResume<CR>
 nnoremap <Leader><space>b :Unite buffer_tab<CR>
