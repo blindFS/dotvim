@@ -9,7 +9,6 @@
     set backspace=indent,eol,start
     set backupcopy=yes
     set backupdir=~/tmp/.backup//
-    set clipboard=autoselectplus
     set cmdheight=1
     set completeopt=longest,menuone
     set concealcursor=nc
@@ -108,8 +107,9 @@
 
     if has('nvim')
         runtime! plugin/python_setup.vim
+    else
+        set clipboard=autoselectplus
     endif
-
 "------------------------------------------------------------------------------------------------------------------------------------
     "                                  ..                                  _                      __ _                    _   _
     "               ......'...          ...                           __ _(_)_ __    __ ___ _ _  / _(_)__ _ _  _ _ _ __ _| |_(_)___ _ _
