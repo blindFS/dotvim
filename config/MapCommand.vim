@@ -237,7 +237,12 @@
                             let b:ordered_index[level] += 1
                         endif
                         execute lino.'s/^[\t ]*\zs#/'.right_index."."
-                    elseif line_content !~ '^[\t ]*[*-]'
+                    elseif line_content =~ '^[\t ]*[*-]'
+                        let level = len(matchstr(line_content, '^\s*\ze[*-]'))/&shiftwidth+1
+                        if len(b:ordered_index) > 0 && level <= keys(b:ordered_index)[-1]
+                            let b:ordered_index = {}
+                        endif
+                    else
                         let b:ordered_index = {}
                     endif
                 endif
