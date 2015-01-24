@@ -214,8 +214,8 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-multiple-cursors')
     highlight link multiple_cursors_visual IncSearch
-    nnoremap <C-N> :call multiple_cursors#new("n")<CR>
-    xnoremap <C-N> :<C-U>call multiple_cursors#new("n")<CR>
+    nnoremap <C-N> :call multiple_cursors#new("n", 0)<CR>
+    xnoremap <C-N> :<C-U>call multiple_cursors#new("n", 0)<CR>
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
