@@ -15,6 +15,7 @@ call unite#custom#profile('default',
             \   'cursor-line-highlight' : 'Statusline',
             \   'prompt' : '➤ '
             \ })
+let g:unite#workflow#player       = 'mpv'
 let g:unite#workflow#reddit#front =
             \ 'http://www.reddit.com/.json?'.
             \ 'feed=7e382702f6cfd8bf0db677c9d5f24b946ad737b4'.
