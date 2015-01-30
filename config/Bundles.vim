@@ -185,7 +185,10 @@
     NeoBundleLazy 'Valloric/YouCompleteMe', {
                 \ 'filetypes' :['c', 'cpp'],
                 \ 'build_commands' : 'cmake',
-                \ 'build' : {'unix' : './install.sh --clang-completer --system-libclang'},
+                \ 'build' : {'unix' :
+                \   'git submodule update --init --recursive && '.
+                \   './install.sh --clang-completer --system-libclang'
+                \ },
                 \ 'disabled' : !has('python')
                 \ }
     NeoBundleLazy 'davidhalter/jedi-vim', {
