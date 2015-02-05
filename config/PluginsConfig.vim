@@ -262,9 +262,11 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-translator')
     " let g:translate_cmd = 'ydcv'
-    vmap T <Plug>Translate
-    vmap R <Plug>TranslateReplace
-    vmap P <Plug>TranslateSpeak
+    let g:translate_player = 'mpv'
+    vmap T  <Plug>Translate
+    vmap R  <Plug>TranslateReplace
+    vmap P  <Plug>TranslateSpeak
+    vmap Pj :call translator#speak('ja')<CR>
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------

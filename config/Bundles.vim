@@ -207,7 +207,7 @@
                 \ 'disabled' : has('unix')
                 \ }
     NeoBundleLazy 'farseer90718/vim-regionsyntax', {
-                \ 'filetypes' : ['vimwiki', 'markdown', 'tex', 'html']
+                \ 'filetypes' : ['vimwiki', 'markdown', 'tex', 'html', 'vim']
                 \ }
     NeoBundleLazy 'sjl/gundo.vim', {
                 \ 'commands' : 'GundoToggle'

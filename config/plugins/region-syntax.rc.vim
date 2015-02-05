@@ -9,5 +9,10 @@ let g:regionsyntax_map = {
             \   [{
             \       'start' : '\\begin{minted}[^{]*{<syntax>}',
             \       'end' : '\\end{minted}',
+            \   }],
+            \ 'vim' :
+            \   [{
+            \       'start' : '^[ \t]*<syntax>\s*<<\s*EO.',
+            \       'end' : '^[ \t]*EO.\s*$',
             \   }]
             \ }
