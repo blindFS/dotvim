@@ -308,6 +308,9 @@
 "-----------------------------------------------------------------
 " filetype specific
 "-----------------------------------------------------------------
+    NeoBundle 'tmux-plugins/vim-tmux', {
+                \ 'external_commands' : 'tmux'
+                \ }
     NeoBundleLazy 'hynek/vim-python-pep8-indent', {
                 \ 'filetypes' : 'python',
                 \ }
