@@ -269,6 +269,8 @@ if neobundle#tap('vim-translator')
     vmap Pj :call translator#speak('ja')<CR>
     call neobundle#untap()
 endif
+command! -range Speak :call system('echo "'.GetVisualSelection().
+            \ '" | festival --tts &')
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-taskwarrior
 " https://github.com/farseer90718/vim-taskwarrior.git
@@ -422,11 +424,12 @@ if neobundle#tap('vim-airline')
     let g:airline#extensions#tabline#left_alt_sep     = ''
     let g:airline#extensions#tabline#right_sep        = ''
     let g:airline#extensions#tabline#right_alt_sep    = ''
-    let g:airline_branch_prefix                       = '  '
-    let g:airline_readonly_symbol                     = '  '
-    let g:airline_linecolumn_prefix                   = '  '
-    let g:airline_paste_symbol                        = ' ✍  PASTE'
-    let g:airline#extensions#whitespace#symbol        = '✷'
+    let g:airline_symbols                             = get(g:, 'airline_symbols', {})
+    let g:airline_symbols.branch                      = '  '
+    let g:airline_symbols.readonly                    = '  '
+    let g:airline_symbols.linenr                      = '  '
+    let g:airline_symbols.paste                       = ' ✍  PASTE'
+    let g:airline_symbols.whitespace                  = 'Ξ'
     let g:airline#extensions#whitespace#show_message  = 0
     let g:airline#extensions#eclim#enabled            = 1
     let g:airline#extensions#hunks#non_zero_only      = 1
