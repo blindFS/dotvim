@@ -67,11 +67,10 @@
     " spell correction
     nnoremap <C-y> :call <SID>SpellCorrect()<CR>
         function! s:SpellCorrect()
-            let s:oldspell = &spell
+            let oldspell = &spell
             set spell
             normal! 1z=
-            let &spell = s:oldspell
-            unlet s:oldspell
+            let &spell = oldspell
         endfunction
 "-----------------------------------------------------------------
 " Selection

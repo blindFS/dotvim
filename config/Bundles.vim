@@ -152,7 +152,7 @@
     NeoBundleLazy 'scrooloose/syntastic', {
                 \ 'insert' : 1
                 \ }
-    NeoBundleLazy 'cmdline-completion', {
+    NeoBundleLazy 'gelguy/Cmd2.vim', {
                 \ 'mappings' : ['nxo', ':', '/', '?']
                 \ }
     NeoBundleLazy 'thinca/vim-quickrun', {
