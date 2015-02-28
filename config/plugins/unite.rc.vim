@@ -43,12 +43,18 @@ let g:unite_source_outline_info = {}
 let g:unite_source_outline_info.vimwiki = {
     \ 'heading' : '^[ \t]*=\+.*=\+$'
     \ }
+
+function! s:open_file() abort
+    cd %:p:h
+    Unite file
+endfunction
+
 nnoremap <Leader><space>  :Unite -keep-focus -no-quit<CR>
 nnoremap <Leader><space>r :UniteResume<CR>
 nnoremap <Leader><space>b :Unite buffer_tab<CR>
 nnoremap <leader><space>B :Unite buffer<CR>
 nnoremap <leader><space>c :Unite command<CR>
-nnoremap <leader><space>f :Unite file<CR>
+nnoremap <leader><space>f :call <SID>open_file()<CR>
 nnoremap <leader><space>j :Unite jump<CR>
 nnoremap <leader><space>l :Unite buffer_tab<CR>
 nnoremap <leader><space>m :Unite mapping<CR>
