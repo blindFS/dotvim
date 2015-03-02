@@ -55,6 +55,7 @@ nnoremap <Leader><space>b :Unite buffer_tab<CR>
 nnoremap <leader><space>B :Unite buffer<CR>
 nnoremap <leader><space>c :Unite command<CR>
 nnoremap <leader><space>f :call <SID>open_file()<CR>
+nnoremap <leader><space>g :Unite file_rec/git<CR>
 nnoremap <leader><space>j :Unite jump<CR>
 nnoremap <leader><space>l :Unite buffer_tab<CR>
 nnoremap <leader><space>m :Unite mapping<CR>
