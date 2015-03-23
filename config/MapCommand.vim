@@ -181,18 +181,32 @@
             endif
         endfunction
     command! Feh :call ViewImage()
-        function! ViewImage()
+        function! ViewImage() abort
             execute 'normal BvEy'
             let path = matchstr(@0, '\v^[ \t]*(\{\{)=\zs[.~/].*\.(jpg|png|gif|bmp)')
             try
                 if path != ''
                     let path = &filetype == 'vimwiki' ? g:vimwiki_list[0].path_html . path : path
-                    silent! execute '!feh '.path.' &' | redraw!
+                    if filereadable(path)
+                        silent! execute '!feh '.path.' &' | redraw!
+                    else
+                        echoerr 'No such image'
+                    endif
                 else
                     let url = matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
-                    silent! execute '!feh '.url.' &' | redraw!
+                    if url != ''
+                        silent! execute '!feh '.url.' &' | redraw!
+                    endif
                 endif
             endtry
+        endfunction
+    command! Scrot :call ScrotImage()
+        function! ScrotImage() abort
+            let fname = substitute(input('image file name:', 'temp'), ' ', '_', 'g').'.png'
+            let fpath = '$HOME/Dropbox/Public/html/assets/image/'.fname
+            call system('scrot -s '.fpath)
+            call append(line('.'), '{{./assets/image/'.fname.'}}')
+            call system('xdg-open '.fpath)
         endfunction
     command! CurSyntax :call GetCurrentSyntax()
         function! GetCurrentSyntax()
