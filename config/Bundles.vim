@@ -44,6 +44,11 @@
     NeoBundleLazy 'mhinz/vim-randomtag', {
                 \ 'commands' : 'Random'
                 \ }
+    NeoBundleLazy 'junegunn/vim-peekaboo', {
+                \ 'mappings' : [
+                \ ['n', '"', '@'],
+                \ ['i', '<C-R>']]
+                \ }
 "-----------------------------------------------------------------
 " lib
 "-----------------------------------------------------------------

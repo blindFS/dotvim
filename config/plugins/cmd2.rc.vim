@@ -22,6 +22,10 @@ function! s:CustomFuzzySearch(string)
     return pattern
 endfunction
 
+function! s:Peekaboo()
+    call peekaboo#peek(1, 'ctrl-r',  0)
+endfunction
+
 let g:Cmd2_options = {
             \ 'menu_hl' : 'airline_b',
             \ 'menu_selected_hl' : 'airline_a',
@@ -51,10 +55,12 @@ let g:Cmd2_cmd_mappings = {
             \ "\<Plug>Cmd2STab": {'command': "Cmd2#functions#TabBackward", 'type': 'function', 'flags': 'C'},
             \ "\<Tab>": {'command': "\<Plug>Cmd2Tab", 'type': 'remap', 'flags': 'C'},
             \ "\<S-Tab>": {'command': "\<Plug>Cmd2STab", 'type': 'remap', 'flags': 'C'},
+            \ 'Peekaboo': {'command': function('s:Peekaboo'), 'type': 'function'},
             \ }
 
 cmap <C-L> <Plug>Cmd2
 cmap <expr> <C-N> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CF" : "\<Tab>"
 cmap <expr> <C-P> Cmd2#ext#complete#InContext() ? "\<Plug>Cmd2CB" : "\<S-Tab>"
+cmap <C-R> <Plug>(Cmd2)Peekaboo
 
 set wildcharm=<Tab>
