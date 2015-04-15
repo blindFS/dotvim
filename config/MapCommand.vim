@@ -232,6 +232,8 @@
                     endif
                     silent! execute lino.'s/\[\[\([^\[\]]*\)\]\]/\="\[\[file:".substitute(submatch(1), " ", "%20", "g").".org\]\[".submatch(1)."\]\]"/g'
                     silent! execute lino.'s/{{\([^{}]*\)}}/\[\[file:\1\]\]/g'
+                    silent! execute lino.'s/^[\t ]*{{\$[\t ]*$/\\['
+                    silent! execute lino.'s/^[\t ]*}}\$[\t ]*$/\\]'
                     silent! execute lino.'s/^[\t ]*\zs\*/+/g'
                     silent! execute lino.'s/\$\([^`$]*\)\$/\\(\1\\)/g'
                     silent! execute lino.'s/`\([^`]*\)`/\~\1\~/g'
