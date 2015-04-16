@@ -313,6 +313,9 @@
 "-----------------------------------------------------------------
 " filetype specific
 "-----------------------------------------------------------------
+    NeoBundleLazy 'derekwyatt/vim-scala', {
+                \ 'filetypes' : 'scala'
+                \ }
     NeoBundle 'tmux-plugins/vim-tmux', {
                 \ 'external_commands' : 'tmux'
                 \ }
