@@ -1,4 +1,13 @@
 "--------------------------------------------------------------------------------------------------------------
+" plugin - vim-colortuner
+" https://github.com/zefei/vim-colortuner.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-colortuner')
+    let g:colortuner_enabled = 1
+    let g:colortuner_preferred_schemes = ['molokai', 'flattr']
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
 " plugin - vim-peekaboo
 " https://github.com/junegunn/vim-peekaboo.git
 "--------------------------------------------------------------------------------------------------------------
