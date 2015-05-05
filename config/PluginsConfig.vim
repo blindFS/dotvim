@@ -1,4 +1,24 @@
 "--------------------------------------------------------------------------------------------------------------
+" plugin - vim-easymotion
+" https://github.com/Lokaltog/vim-easymotion.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-easymotion')
+    let g:EasyMotion_smartcase  = 1
+    let g:EasyMotion_do_mapping = 0
+    set nohlsearch
+    nmap s  <Plug>(easymotion-s)
+    nmap S  <Plug>(easymotion-s2)
+    map  // <Plug>(easymotion-sn)
+    omap // <Plug>(easymotion-tn)
+    nmap *  //<CR>
+    nmap #  //<CR>
+    vmap *  "ey//e<CR>
+    vmap #  "ey//e<CR>
+    map  n  <Plug>(easymotion-next)
+    map  N  <Plug>(easymotion-prev)
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
 " plugin - vim-colortuner
 " https://github.com/zefei/vim-colortuner.git
 "--------------------------------------------------------------------------------------------------------------
@@ -22,23 +42,6 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('Cmd2.vim')
     source ~/.vim/config/plugins/cmd2.rc.vim
-    call neobundle#untap()
-endif
-"--------------------------------------------------------------------------------------------------------------
-" plugin - incsearch.vim
-" https://github.com/haya14busa/incsearch.vim.git
-"--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('incsearch.vim')
-    let g:incsearch#auto_nohlsearch = 1
-    map /  <Plug>(incsearch-forward)
-    map ?  <Plug>(incsearch-backward)
-    map g/ <Plug>(incsearch-stay)
-    map n  <Plug>(incsearch-nohl-n)
-    map N  <Plug>(incsearch-nohl-N)
-    map *  <Plug>(incsearch-nohl-*)
-    map #  <Plug>(incsearch-nohl-#)
-    map g* <Plug>(incsearch-nohl-g*)
-    map g# <Plug>(incsearch-nohl-g#)
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -533,14 +536,6 @@ endif
 if neobundle#tap('emmet-vim')
     let g:user_emmet_mode       = 'a'
     let g:user_emmet_leader_key = '<c-e>'
-    call neobundle#untap()
-endif
-"--------------------------------------------------------------------------------------------------------------
-" plugin - clever-f.vim
-" https://github.com/rhysd/clever-f.vim.git
-"--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('clever-f.vim')
-    let g:clever_f_chars_match_any_signs = ';'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------

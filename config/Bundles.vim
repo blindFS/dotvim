@@ -235,17 +235,14 @@
     NeoBundle 'Shougo/neomru.vim'
     NeoBundle 'farseer90718/miscellaneous'
     NeoBundle 'Shougo/tabpagebuffer.vim'
-    NeoBundleLazy 'rhysd/clever-f.vim', {
-                \ 'mappings' : ['nxo', 'f', 'F', 't', 'T']
+    NeoBundleLazy 'Lokaltog/vim-easymotion', {
+                \ 'mappings' : '<Plug>(easymotion-'
                 \ }
     NeoBundleLazy 't9md/vim-choosewin', {
                 \ 'mappings' : '<Plug>(choosewin)'
                 \ }
     NeoBundleLazy 'majutsushi/tagbar', {
                 \ 'commands' : 'TagbarToggle'
-                \ }
-    NeoBundleLazy 'haya14busa/incsearch.vim', {
-                \ 'mappings' : '<Plug>(incsearch-'
                 \ }
 "-----------------------------------------------------------------
 " text trimming
