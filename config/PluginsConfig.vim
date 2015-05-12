@@ -33,7 +33,7 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-peekaboo')
     let g:peekaboo_window = 'botright 20new'
-    let g:peekaboo_delay = 1000
+    let g:peekaboo_delay  = 1000
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------

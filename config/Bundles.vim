@@ -5,6 +5,7 @@
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-fugitive'
     NeoBundle 'blueyed/vim-diminactive'
+    NeoBundle 'junegunn/vim-peekaboo'
     NeoBundle 'farseer90718/vim-taskwarrior', {
                 \ 'external_commands' : 'task'
                 \ }
@@ -43,11 +44,6 @@
                 \ }
     NeoBundleLazy 'mhinz/vim-randomtag', {
                 \ 'commands' : 'Random'
-                \ }
-    NeoBundleLazy 'junegunn/vim-peekaboo', {
-                \ 'mappings' : [
-                \ ['n', '"', '@'],
-                \ ['i', '<C-R>']]
                 \ }
 "-----------------------------------------------------------------
 " lib
