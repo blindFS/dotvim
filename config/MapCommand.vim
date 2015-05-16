@@ -204,8 +204,11 @@
         function! ScrotImage() abort
             let fname = substitute(input('image file name:', 'temp'), ' ', '_', 'g').'.png'
             let fpath = '$HOME/Dropbox/Public/html/assets/image/'.fname
+            call system('transset-df -a 0')
             call system('scrot -s '.fpath)
             call append(line('.'), '{{./assets/image/'.fname.'}}')
+            call system('transset-df -a -t')
+            call system('transset-df -a -t')
             call system('xdg-open '.fpath)
         endfunction
     command! CurSyntax :call GetCurrentSyntax()
