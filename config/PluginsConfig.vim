@@ -19,15 +19,6 @@ if neobundle#tap('vim-easymotion')
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
-" plugin - vim-colortuner
-" https://github.com/zefei/vim-colortuner.git
-"--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('vim-colortuner')
-    let g:colortuner_enabled = 1
-    let g:colortuner_preferred_schemes = ['molokai', 'flattr']
-    call neobundle#untap()
-endif
-"--------------------------------------------------------------------------------------------------------------
 " plugin - vim-peekaboo
 " https://github.com/junegunn/vim-peekaboo.git
 "--------------------------------------------------------------------------------------------------------------
@@ -136,26 +127,6 @@ endif
 if neobundle#tap('DrawIt')
     nmap <Leader>di <Plug>DrawItStart
     nmap <Leader>ds <Plug>DrawItStop
-    call neobundle#untap()
-endif
-"--------------------------------------------------------------------------------------------------------------
-" plugin - vim-choosewin
-" https://github.com/t9md/vim-choosewin.git
-"--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('vim-choosewin')
-    let g:choosewin_overlay_enable          = 1
-    let g:choosewin_overlay_clear_multibyte = 1
-    let g:choosewin_statusline_replace      = 1
-    let g:choosewin_tabline_replace         = 1
-    let g:choosewin_color_overlay           = {
-                \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
-                \ 'cterm': [ 25, 25 ]
-                \ }
-    let g:choosewin_color_overlay_current   = {
-                \ 'gui': ['firebrick1', 'firebrick1' ],
-                \ 'cterm': [ 124, 124 ]
-                \ }
-    nmap  <leader>q  <Plug>(choosewin)
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -370,16 +341,6 @@ if neobundle#tap('gist-vim')
     let g:gist_clip_command              = 'xclip -selection clipboard'
     let g:gist_detect_filetype           = 1
     let g:gist_open_browser_after_post   = 0
-    call neobundle#untap()
-endif
-"--------------------------------------------------------------------------------------------------------------
-" plugin - sexy_scroller.vim
-" https://github.com/joeytwiddle/sexy_scroller.vim.git
-"--------------------------------------------------------------------------------------------------------------
-if neobundle#tap('sexy_scroller.vim')
-    let g:SexyScroller_EasingStyle = 2
-    let g:SexyScroller_ScrollTime  = 5
-    let g:SexyScroller_MaxTime     = 500
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------

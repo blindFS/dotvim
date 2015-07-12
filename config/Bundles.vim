@@ -200,7 +200,6 @@
 " appearance
 "-----------------------------------------------------------------
     NeoBundle 'bling/vim-airline'
-    NeoBundle 'joeytwiddle/sexy_scroller.vim'
     NeoBundle 'farseer90718/Rainbow-Parentheses-Improved-and2'
     NeoBundle 'nathanaelkane/vim-indent-guides'
     NeoBundle 'mhinz/vim-signify'
@@ -217,9 +216,6 @@
                 \ 'type' : 'hg',
                 \ 'filetypes' : ['c', 'cpp']
                 \ }
-    NeoBundleLazy 'zefei/vim-colortuner', {
-                \ 'commands' : 'Colortuner'
-                \ }
 "-----------------------------------------------------------------
 " colorscheme
 "-----------------------------------------------------------------
@@ -233,9 +229,6 @@
     NeoBundle 'Shougo/tabpagebuffer.vim'
     NeoBundleLazy 'Lokaltog/vim-easymotion', {
                 \ 'mappings' : '<Plug>(easymotion-'
-                \ }
-    NeoBundleLazy 't9md/vim-choosewin', {
-                \ 'mappings' : '<Plug>(choosewin)'
                 \ }
     NeoBundleLazy 'majutsushi/tagbar', {
                 \ 'commands' : 'TagbarToggle'
