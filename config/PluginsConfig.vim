@@ -1,4 +1,16 @@
 "--------------------------------------------------------------------------------------------------------------
+" plugin - vim-devicons
+" https://github.com/ryanoasis/vim-devicons.git
+"--------------------------------------------------------------------------------------------------------------
+if neobundle#tap('vim-devicons')
+    let g:webdevicons_enable                    = 1
+    let g:webdevicons_enable_unite              = 1
+    let g:webdevicons_enable_vimfilter          = 1
+    let g:webdevicons_enable_airline_statusline = 1
+    let g:WebDevIconsUnicodeDecorateFileNodes   = 1
+    call neobundle#untap()
+endif
+"--------------------------------------------------------------------------------------------------------------
 " plugin - vim-easymotion
 " https://github.com/Lokaltog/vim-easymotion.git
 "--------------------------------------------------------------------------------------------------------------

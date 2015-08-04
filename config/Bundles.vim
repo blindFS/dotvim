@@ -200,6 +200,9 @@
 " appearance
 "-----------------------------------------------------------------
     NeoBundle 'bling/vim-airline'
+    NeoBundle 'ryanoasis/vim-devicons', {
+                \ 'disabled' : !has('gui_running')
+                \ }
     NeoBundle 'farseer90718/Rainbow-Parentheses-Improved-and2'
     NeoBundle 'nathanaelkane/vim-indent-guides'
     NeoBundle 'mhinz/vim-signify'
