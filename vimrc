@@ -83,6 +83,7 @@
     call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'mhinz/vim-startify'
     if neobundle#load_cache()
+        NeoBundleFetch 'Shougo/neobundle.vim'
         source ~/.vim/config/Bundles.vim
         NeoBundleSaveCache
     endif

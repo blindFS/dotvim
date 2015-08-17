@@ -1,3 +1,4 @@
+let s:plugin_rcs = '~/.vim/config/plugins/'
 "--------------------------------------------------------------------------------------------------------------
 " plugin - vim-devicons
 " https://github.com/ryanoasis/vim-devicons.git
@@ -263,8 +264,8 @@ endif
 " https://github.com/junegunn/vim-easy-align.git
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-easy-align')
-    let g:neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/easy-align.rc.vim'
+    let neobundle#hooks.on_source =
+                \ s:plugin_rcs.'easy-align.rc.vim'
     vnoremap <silent> <Enter> :EasyAlign<CR>
     call neobundle#untap()
 endif
@@ -323,8 +324,8 @@ endif
 " https://github.com/farseer90718/vim-regionsyntax.git
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-regionsyntax')
-    let g:neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/region-syntax.rc.vim'
+    let neobundle#hooks.on_source =
+                \ s:plugin_rcs.'region-syntax.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -332,8 +333,8 @@ endif
 " https://github.com/Shougo/context_filetype.vim.git
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('context_filetype.vim')
-    let g:neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/context-filetype.rc.vim'
+    let neobundle#hooks.on_source =
+                \ s:plugin_rcs.'context-filetype.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -390,7 +391,7 @@ endif
 if neobundle#tap('vimwiki')
     nmap <Leader>ww <Plug>VimwikiIndex
     let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/vimwiki.rc.vim'
+                \ s:plugin_rcs.'vimwiki.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -409,7 +410,7 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-signify')
     let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/signify.rc.vim'
+                \ s:plugin_rcs.'signify.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -472,7 +473,7 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vimfiler.vim')
     let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/vimfiler.rc.vim'
+                \ s:plugin_rcs.'vimfiler.rc.vim'
     nnoremap <F1> :VimFilerExplorer<CR>
     call neobundle#untap()
 endif
@@ -585,7 +586,7 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('taghighlight')
     let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/taghighlight.rc.vim'
+                \ s:plugin_rcs.'taghighlight.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -595,7 +596,7 @@ endif
 if neobundle#tap('tagbar')
     nnoremap <F2> :TagbarToggle<CR>
     let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/tagbar.rc.vim'
+                \ s:plugin_rcs.'tagbar.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -604,7 +605,7 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('neocomplete.vim')
     let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/neocomplete.rc.vim'
+                \ s:plugin_rcs.'neocomplete.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -613,7 +614,7 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('neosnippet.vim')
     let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/neosnippet.rc.vim'
+                \ s:plugin_rcs.'neosnippet.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------
@@ -622,7 +623,7 @@ endif
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('YouCompleteMe')
     let neobundle#hooks.on_source =
-                \ '~/.vim/config/plugins/youcompleteme.rc.vim'
+                \ s:plugin_rcs.'youcompleteme.rc.vim'
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------

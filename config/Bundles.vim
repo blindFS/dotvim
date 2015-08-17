@@ -1,7 +1,6 @@
 "-----------------------------------------------------------------
 " utilities
 "-----------------------------------------------------------------
-    NeoBundleFetch 'Shougo/neobundle.vim'
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-fugitive'
     NeoBundle 'blueyed/vim-diminactive'
