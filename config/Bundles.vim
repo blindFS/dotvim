@@ -5,10 +5,10 @@
     NeoBundle 'tpope/vim-fugitive'
     NeoBundle 'blueyed/vim-diminactive'
     NeoBundle 'junegunn/vim-peekaboo'
-    NeoBundle 'farseer90718/vim-taskwarrior', {
+    NeoBundle 'blindFS/vim-taskwarrior', {
                 \ 'external_commands' : 'task'
                 \ }
-    NeoBundleLazy 'farseer90718/vim-translator', {
+    NeoBundleLazy 'blindFS/vim-translator', {
                 \ 'mappings' : '<Plug>Translate'
                 \ }
     NeoBundleLazy 'chrisbra/NrrwRgn', {
@@ -76,7 +76,7 @@
     NeoBundleLazy 'lilydjwg/colorizer', {
                 \ 'commands' : 'ColorToggle'
                 \ }
-    NeoBundleLazy 'farseer90718/vim-colorpicker', {
+    NeoBundleLazy 'blindFS/vim-colorpicker', {
                 \ 'commands' : 'ColorPicker',
                 \ 'disabled' : !has('python')
                 \ }
@@ -127,7 +127,7 @@
     NeoBundleLazy 'tacroe/unite-mark', {
                 \ 'unite_sources' : 'mark'
                 \ }
-    NeoBundleLazy 'farseer90718/unite-workflow', {
+    NeoBundleLazy 'blindFS/unite-workflow', {
                 \ 'disabled' : !has('python'),
                 \ 'unite_sources' : [
                 \   'github', 'gist', 'v2ex',
@@ -142,7 +142,7 @@
                 \   'mattn/gist-vim',
                 \   'jaxbot/github-issues.vim']
                 \ }
-    NeoBundleLazy 'farseer90718/unite-character', {
+    NeoBundleLazy 'blindFS/unite-character', {
                 \ 'commands' : ['SearchUnicode', 'HTMLUnicode'],
                 \ 'unite_sources' : 'character'
                 \ }
@@ -202,13 +202,13 @@
     NeoBundle 'ryanoasis/vim-devicons', {
                 \ 'disabled' : !has('gui_running')
                 \ }
-    NeoBundle 'farseer90718/Rainbow-Parentheses-Improved-and2'
+    NeoBundle 'blindFS/Rainbow-Parentheses-Improved-and2'
     NeoBundle 'nathanaelkane/vim-indent-guides'
     NeoBundle 'mhinz/vim-signify'
     NeoBundle 'mattn/vimtweak', {
                 \ 'disabled' : has('unix')
                 \ }
-    NeoBundleLazy 'farseer90718/vim-regionsyntax', {
+    NeoBundleLazy 'blindFS/vim-regionsyntax', {
                 \ 'filetypes' : ['vimwiki', 'markdown', 'tex', 'html', 'vim']
                 \ }
     NeoBundleLazy 'sjl/gundo.vim', {
@@ -221,13 +221,13 @@
 "-----------------------------------------------------------------
 " colorscheme
 "-----------------------------------------------------------------
-    NeoBundle 'tomasr/molokai',                   {'script_type' : 'colors'}
-    NeoBundle 'farseer90718/flattr.vim',          {'script_type' : 'colors'}
+    NeoBundle 'tomasr/molokai'
+    NeoBundle 'blindFS/flattr.vim'
 "-----------------------------------------------------------------
 " navigate
 "-----------------------------------------------------------------
     NeoBundle 'Shougo/neomru.vim'
-    NeoBundle 'farseer90718/miscellaneous'
+    NeoBundle 'blindFS/miscellaneous'
     NeoBundle 'Shougo/tabpagebuffer.vim'
     NeoBundleLazy 'Lokaltog/vim-easymotion', {
                 \ 'mappings' : '<Plug>(easymotion-'
@@ -319,10 +319,10 @@
     NeoBundleLazy 'gerw/vim-latex-suite', {
                 \ 'filetypes' : 'tex'
                 \ }
-    NeoBundleLazy 'farseer90718/vim-markdown', {
+    NeoBundleLazy 'blindFS/vim-markdown', {
                 \ 'filetypes' : 'markdown'
                 \ }
-    NeoBundleLazy 'farseer90718/vim-reveal', {
+    NeoBundleLazy 'blindFS/vim-reveal', {
                 \ 'filetypes' : 'markdown'
                 \ }
     NeoBundleLazy 'eagletmt/neco-ghc', {
