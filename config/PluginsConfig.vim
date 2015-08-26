@@ -631,6 +631,12 @@ endif
 " https://github.com/davidhalter/jedi-vim.git
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('jedi-vim')
+    autocmd FileType python
+                \ if has('python') || has('python3') |
+                \   setlocal omnifunc=jedi#completions |
+                \ else |
+                \   setlocal omnifunc=
+                \ endif
     let g:jedi#auto_vim_configuration = 0
     let g:jedi#popup_on_dot = 0
     let g:jedi#popup_select_first = 0

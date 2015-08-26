@@ -47,14 +47,6 @@
 "-----------------------------------------------------------------
 " lib
 "-----------------------------------------------------------------
-    NeoBundle 'Shougo/vimproc.vim', {
-                \ 'build' : {
-                \ 'windows' : 'make -f make_mingw32.mak',
-                \ 'cygwin' : 'make -f make_cygwin.mak',
-                \ 'mac' : 'make -f make_mac.mak',
-                \ 'unix' : 'make -f make_unix.mak',
-                \ }
-                \ }
     NeoBundleLazy 'mattn/webapi-vim'
 "-----------------------------------------------------------------
 " network
@@ -182,15 +174,6 @@
     NeoBundleLazy 'Shougo/echodoc.vim', {
                 \ 'insert' : 1
                 \ }
-    NeoBundleLazy 'Valloric/YouCompleteMe', {
-                \ 'filetypes' :['c', 'cpp'],
-                \ 'build_commands' : 'cmake',
-                \ 'build' : {'unix' :
-                \   'git submodule update --init --recursive && '.
-                \   './install.sh --clang-completer --system-libclang'
-                \ },
-                \ 'disabled' : !has('python')
-                \ }
     NeoBundleLazy 'davidhalter/jedi-vim', {
                 \ 'filetypes' : ['python'],
                 \ 'disabled' : !has('python')
@@ -205,9 +188,6 @@
     NeoBundle 'blindFS/Rainbow-Parentheses-Improved-and2'
     NeoBundle 'nathanaelkane/vim-indent-guides'
     NeoBundle 'mhinz/vim-signify'
-    NeoBundle 'mattn/vimtweak', {
-                \ 'disabled' : has('unix')
-                \ }
     NeoBundleLazy 'blindFS/vim-regionsyntax', {
                 \ 'filetypes' : ['vimwiki', 'markdown', 'tex', 'html', 'vim']
                 \ }
@@ -319,7 +299,7 @@
     NeoBundleLazy 'gerw/vim-latex-suite', {
                 \ 'filetypes' : 'tex'
                 \ }
-    NeoBundleLazy 'blindFS/vim-markdown', {
+    NeoBundleLazy 'plasticboy/vim-markdown', {
                 \ 'filetypes' : 'markdown'
                 \ }
     NeoBundleLazy 'blindFS/vim-reveal', {
@@ -352,7 +332,6 @@
                 \ 'type' : 'hg'
                 \ }
 
-    NeoBundleCheck
 "------------------------------------------------------------------------------------------------------------------------------------
 "                                  ..                                  _                      __ _                    _   _
 "               ......'...          ...                           __ _(_)_ __    __ ___ _ _  / _(_)__ _ _  _ _ _ __ _| |_(_)___ _ _
