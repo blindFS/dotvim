@@ -299,7 +299,7 @@
     NeoBundleLazy 'gerw/vim-latex-suite', {
                 \ 'filetypes' : 'tex'
                 \ }
-    NeoBundleLazy 'plasticboy/vim-markdown', {
+    NeoBundleLazy 'blindFS/vim-markdown', {
                 \ 'filetypes' : 'markdown'
                 \ }
     NeoBundleLazy 'blindFS/vim-reveal', {

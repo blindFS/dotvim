@@ -381,7 +381,8 @@ endif
 " https://github.com/plasticboy/vim-markdown.git
 "--------------------------------------------------------------------------------------------------------------
 if neobundle#tap('vim-markdown')
-    let g:vim_markdown_initial_foldlevel=99
+    let g:vim_markdown_folding_disabled = 1
+    let g:vim_markdown_math             = 1
     call neobundle#untap()
 endif
 "--------------------------------------------------------------------------------------------------------------

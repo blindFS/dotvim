@@ -401,7 +401,7 @@ repository = 'gerw/vim-latex-suite'
 filetypes = 'tex'
 
 [[plugins]]
-repository = 'plasticboy/vim-markdown'
+repository = 'blindFS/vim-markdown'
 filetypes = 'markdown'
 
 [[plugins]]
