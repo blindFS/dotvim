@@ -229,14 +229,18 @@
                 elseif line_content =~ '^[\t ]*}}}[\t ]*$'
                     let b:enter_block = 0
                     execute lino.'s/^[\t ]*}}}[\t ]*$/#+end_src'
+                elseif line_content =~ '^[\t ]*{{\$[\t ]*$'
+                    let b:enter_block = 1
+                    execute lino.'s/^[\t ]*{{\$[\t ]*$/\\begin{equation} \\begin{split}'
+                elseif line_content =~ '^[\t ]*}}\$[\t ]*$'
+                    let b:enter_block = 0
+                    execute lino.'s/^[\t ]*}}\$[\t ]*$/\\end{split} \\end{equation}'
                 elseif !b:enter_block
                     if line_content =~ '^[\t ]*|[-|]\+|[\t ]*$'
                         silent! execute lino.'s/-|-/-+-/g'
                     endif
                     silent! execute lino.'s/\[\[\([^\[\]]*\)\]\]/\="\[\[file:".substitute(submatch(1), " ", "%20", "g").".org\]\[".submatch(1)."\]\]"/g'
                     silent! execute lino.'s/{{\([^{}]*\)}}/\[\[file:\1\]\]/g'
-                    silent! execute lino.'s/^[\t ]*{{\$[\t ]*$/\\['
-                    silent! execute lino.'s/^[\t ]*}}\$[\t ]*$/\\]'
                     silent! execute lino.'s/^[\t ]*\zs\*/+/g'
                     silent! execute lino.'s/\$\([^`$]*\)\$/\\(\1\\)/g'
                     silent! execute lino.'s/`\([^`]*\)`/\~\1\~/g'
