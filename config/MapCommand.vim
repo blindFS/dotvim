@@ -200,12 +200,16 @@
                 endif
             endtry
         endfunction
-    command! Scrot :call ScrotImage()
-        function! ScrotImage() abort
-            let fname = substitute(input('image file name:', 'temp'), ' ', '_', 'g').'.png'
+    command! Maim :call MaimImage()
+        function! MaimImage() abort
+            let fname = substitute(input('image file name:'), ' ', '_', 'g').'.png'
+            if fname == ''
+                echoerr 'No file name provided!'
+                return
+            endif
             let fpath = '$HOME/Dropbox/Public/html/assets/image/'.fname
             call system('transset-df -a 0')
-            call system('scrot -s '.fpath)
+            call system('maim -s '.fpath)
             call append(line('.'), '{{./assets/image/'.fname.'}}')
             call system('transset-df -a -t')
             call system('transset-df -a -t')

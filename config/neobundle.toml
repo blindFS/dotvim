@@ -20,8 +20,11 @@ lazy = 0
 
 [[plugins]]
 repository = 'blindFS/vim-taskwarrior'
-commands = 'TW'
-external_commands = 'task'
+
+    [plugins.commands]
+    name = 'TW'
+    complete = 'customlist,taskwarrior#complete#TW'
+
 
 [[plugins]]
 repository = 'blindFS/vim-translator'
