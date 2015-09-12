@@ -203,7 +203,7 @@
     command! Maim :call MaimImage()
         function! MaimImage() abort
             let fname = substitute(input('image file name:'), ' ', '_', 'g').'.png'
-            if fname == ''
+            if fname == '.png'
                 echoerr 'No file name provided!'
                 return
             endif

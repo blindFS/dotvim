@@ -84,25 +84,10 @@
     NeoBundle 'mhinz/vim-startify'
     if neobundle#load_cache()
         NeoBundleFetch 'Shougo/neobundle.vim'
-        NeoBundleLazy 'Valloric/YouCompleteMe', {
-                    \ 'filetypes' :['c', 'cpp'],
-                    \ 'build_commands' : 'cmake',
-                    \ 'build' : {'unix' :
-                    \   'git submodule update --init --recursive && '.
-                    \   './install.sh --clang-completer --system-libclang'
-                    \ },
-                    \ 'disabled' : !has('python')
-                    \ }
-        NeoBundle 'Shougo/vimproc.vim', {
-                    \ 'build' : {
-                    \ 'windows' : 'make -f make_mingw32.mak',
-                    \ 'cygwin' : 'make -f make_cygwin.mak',
-                    \ 'mac' : 'make -f make_mac.mak',
-                    \ 'unix' : 'make -f make_unix.mak',
-                    \ }
-                    \ }
         call neobundle#load_toml(
-                    \ '~/.vim/config/neobundle.toml', {'lazy' : 1})
+                    \ '~/.vim/config/neobundle.toml')
+        call neobundle#load_toml(
+                    \ '~/.vim/config/neobundlelazy.toml', {'lazy' : 1})
         " source ~/.vim/config/Bundles.vim
         NeoBundleCheck
         NeoBundleSaveCache

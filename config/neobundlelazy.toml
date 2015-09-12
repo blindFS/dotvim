@@ -1,0 +1,396 @@
+#-----------------------------------------------------------------
+# utilities
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'tpope/vim-eunuch'
+commands = ['SudoWrite', 'SudoEdit', 'Remove']
+
+[[plugins]]
+repository = 'blindFS/vim-taskwarrior'
+
+    [plugins.commands]
+    name = 'TW'
+    complete = 'customlist,taskwarrior#complete#TW'
+
+
+[[plugins]]
+repository = 'blindFS/vim-translator'
+mappings = '<Plug>Translate'
+
+[[plugins]]
+repository = 'itchyny/calendar.vim'
+
+    [plugins.commands]
+    name = 'Calendar'
+    complete = 'customlist,calendar#argument#complete'
+
+
+[[plugins]]
+repository = 'arecarn/crunch'
+mappings = '<Plug>Crunch'
+commands = ['Crunch', 'CrunchBlock', 'CrunchLine']
+
+[[plugins]]
+repository = 'DrawIt'
+mappings = '<Plug>DrawIt'
+commands = 'DrawIt'
+
+[[plugins]]
+repository = 'thinca/vim-ref'
+mappings = '<Plug>(ref-'
+unite_sources = 'ref'
+
+    [plugins.commands]
+    name = 'Ref'
+    complete = 'customlist,ref#complete'
+
+
+[[plugins]]
+repository = 'LnL7/vim-mark'
+mappings = '<Plug>Mark'
+commands = ['Mark', 'Marks', 'MarkClear', 'MarkSave', 'MarkLoad']
+
+[[plugins]]
+repository = 'gregsexton/gitv'
+commands = 'Gitv'
+depends = ['tpope/vim-fugitive']
+
+[[plugins]]
+repository = 'mhinz/vim-randomtag'
+commands = 'Random'
+
+#-----------------------------------------------------------------
+# network
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'mattn/webapi-vim'
+
+[[plugins]]
+repository = 'mattn/gist-vim'
+depends = ['mattn/webapi-vim']
+commands = 'Gist'
+
+[[plugins]]
+repository = 'jaxbot/github-issues.vim'
+commands = ['Gissues', 'Giedit', 'Giadd']
+
+#-----------------------------------------------------------------
+# frontend
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'mattn/emmet-vim'
+filetypes = ['html', 'css', 'xml', 'vimwiki', 'markdown']
+
+[[plugins]]
+repository = 'lilydjwg/colorizer'
+commands = 'ColorToggle'
+
+[[plugins]]
+repository = 'blindFS/vim-colorpicker'
+commands = 'ColorPicker'
+
+#-----------------------------------------------------------------
+# Unite.vim
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'Shougo/unite-build'
+
+[[plugins]]
+repository = 'Shougo/vimfiler.vim'
+depends = 'Shougo/unite.vim'
+mappings = '<Plug>'
+explorer = 1
+
+    [plugins.commands]
+    name = ['VimFiler']
+    complete = 'customlist,vimfiler#complete'
+
+
+[[plugins]]
+repository = 'hewes/unite-gtags'
+unite_sources = 'gtags'
+
+[[plugins]]
+repository = 'Shougo/vesting'
+unite_sources = 'vesting'
+
+[[plugins]]
+repository = 'Shougo/unite-help'
+unite_sources = 'help'
+
+[[plugins]]
+repository = 'Shougo/unite-outline'
+unite_sources = 'outline'
+
+[[plugins]]
+repository = 'ujihisa/unite-colorscheme'
+unite_sources = 'colorscheme'
+
+[[plugins]]
+repository = 'ujihisa/unite-locate'
+unite_sources = 'locate'
+
+[[plugins]]
+repository = 'tsukkee/unite-tag'
+unite_sources = 'tag'
+
+[[plugins]]
+repository = 'tacroe/unite-mark'
+unite_sources = 'mark'
+
+[[plugins]]
+repository = 'blindFS/unite-workflow'
+unite_sources = ['github', 'gist', 'v2ex', 'reddit', 'youdao', 'apropos', 'wikipedia', 'youtube', 'toilet', 'emoji', 'music163', 'twitter' 'douban', 'zhihu', 'turing', 'dropbox']
+depends = ['mattn/webapi-vim', 'mattn/gist-vim', 'jaxbot/github-issues.vim']
+
+[[plugins]]
+repository = 'blindFS/unite-character'
+commands = ['SearchUnicode', 'HTMLUnicode']
+unite_sources = 'character'
+
+#-----------------------------------------------------------------
+# IDE features
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'Valloric/YouCompleteMe'
+filetypes = ['c', 'cpp']
+build_commands = 'cmake'
+
+    [plugins.build]
+    unix = 'git submodule update --init --recursive && ./install.sh --clang-completer --system-libclang'
+
+
+[[plugins]]
+repository = 'scrooloose/syntastic'
+insert = 1
+
+[[plugins]]
+repository = 'gelguy/Cmd2.vim'
+mappings = ['nxo', ':', '/', '?']
+
+[[plugins]]
+repository = 'thinca/vim-quickrun'
+commands = 'QuickRun'
+
+[[plugins]]
+repository = 'Shougo/vimshell.vim'
+mappings = '<Plug>'
+
+    [plugins.commands]
+    name = 'VimShell'
+    complete = 'customlist,vimshell#complete'
+
+
+[[plugins]]
+repository = 'Shougo/neocomplete.vim'
+depends = ['Shougo/context_filetype.vim', 'ujihisa/neco-look']
+insert = 1
+
+[[plugins]]
+repository = 'Shougo/neosnippet.vim'
+depends = ['Shougo/neosnippet-snippets', 'Shougo/context_filetype.vim']
+insert = 1
+filetypes = 'snippet'
+unite_sources = ['neosnippet', 'neosnippet/user', 'neosnippet/runtime']
+
+[[plugins]]
+repository = 'Shougo/echodoc.vim'
+insert = 1
+
+[[plugins]]
+repository = 'davidhalter/jedi-vim'
+filetypes = ['python']
+
+#-----------------------------------------------------------------
+# highlighting
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'blindFS/vim-regionsyntax'
+filetypes = ['vimwiki', 'markdown', 'tex', 'html', 'vim']
+
+[[plugins]]
+repository = 'https://bitbucket.org/abudden/taghighlight'
+filetypes = ['c', 'cpp']
+type = 'hg'
+
+[[plugins]]
+repository = 'tomasr/molokai'
+
+[[plugins]]
+repository = 'blindFS/flattr.vim'
+lazy = 0
+
+#-----------------------------------------------------------------
+# navigate
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'Lokaltog/vim-easymotion'
+mappings = '<Plug>'
+
+[[plugins]]
+repository = 'majutsushi/tagbar'
+commands = 'TagbarToggle'
+
+[[plugins]]
+repository = 'chrisbra/NrrwRgn'
+commands = ['NR', 'NRP']
+
+[[plugins]]
+repository = 'sjl/gundo.vim'
+commands = 'GundoToggle'
+
+#-----------------------------------------------------------------
+# text trimming
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'tpope/vim-surround'
+mappings = [['n', 'cs', 'ds', 'ys', 'yS'], ['x', 'S']]
+
+[[plugins]]
+repository = 'tpope/vim-speeddating'
+mappings = ['nxo', '<C-X>', '<C-A>']
+
+[[plugins]]
+repository = 'tpope/vim-repeat'
+mappings = '.'
+
+[[plugins]]
+repository = 'terryma/vim-multiple-cursors'
+
+[[plugins]]
+repository = 'Chiel92/vim-autoformat'
+commands = 'Autoformat'
+
+[[plugins]]
+repository = 'Raimondi/delimitMate'
+insert = 1
+
+[[plugins]]
+repository = 'junegunn/vim-easy-align'
+commands = 'EasyAlign'
+mappings = '<Plug>'
+
+[[plugins]]
+repository = 'tommcdo/vim-exchange'
+mappings = '<Plug>(Exchange'
+
+[[plugins]]
+repository = 'osyo-manga/vim-jplus'
+mappings = '<Plug>'
+
+[[plugins]]
+repository = 'tyru/caw.vim'
+mappings = '<Plug>'
+
+#-----------------------------------------------------------------
+# textobj
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'gcmt/wildfire.vim'
+mappings = '<Plug>'
+
+[[plugins]]
+repository = 'thinca/vim-textobj-between'
+depends = 'kana/vim-textobj-user'
+mappings = ['ox', 'ib', 'ab']
+
+[[plugins]]
+repository = 'kana/vim-textobj-function'
+depends = 'kana/vim-textobj-user'
+mappings = ['ox', 'if', 'af']
+
+[[plugins]]
+repository = 'kana/vim-textobj-indent'
+depends = 'kana/vim-textobj-user'
+mappings = ['ox', 'ii', 'ai']
+
+[[plugins]]
+repository = 'sgur/vim-textobj-parameter'
+depends = 'kana/vim-textobj-user'
+mappings = ['ox', 'i,', 'a,']
+
+[[plugins]]
+repository = 'mattn/vim-textobj-url'
+depends = 'kana/vim-textobj-user'
+mappings = ['ox', 'au', 'iu']
+
+[[plugins]]
+repository = 'bps/vim-textobj-python'
+depends = 'kana/vim-textobj-user'
+filetypes = 'python'
+
+[[plugins]]
+repository = 'rbonvall/vim-textobj-latex'
+depends = 'kana/vim-textobj-user'
+filetypes = 'tex'
+
+#-----------------------------------------------------------------
+# filetype specific
+#-----------------------------------------------------------------
+
+[[plugins]]
+repository = 'derekwyatt/vim-scala'
+filetypes = 'scala'
+
+[[plugins]]
+repository = 'tmux-plugins/vim-tmux'
+external_commands = 'tmux'
+
+[[plugins]]
+repository = 'hynek/vim-python-pep8-indent'
+filetypes = 'python'
+
+[[plugins]]
+repository = 'vimwiki/vimwiki'
+mappings = '<Plug>Vimwiki'
+
+[[plugins]]
+repository = 'gerw/vim-latex-suite'
+filetypes = 'tex'
+
+[[plugins]]
+repository = 'blindFS/vim-markdown'
+filetypes = 'markdown'
+
+[[plugins]]
+repository = 'eagletmt/neco-ghc'
+filetypes = 'haskell'
+external_commands = 'ghc-mod'
+
+[[plugins]]
+repository = 'eagletmt/ghcmod-vim'
+filetypes = 'haskell'
+
+[[plugins]]
+repository = 'dag/vim2hs'
+filetypes = 'haskell'
+
+[[plugins]]
+repository = 'wannesm/wmgraphviz.vim'
+filetypes = 'dot'
+
+[[plugins]]
+repository = 'moll/vim-node'
+filetypes = 'javascript'
+
+[[plugins]]
+repository = 'elzr/vim-json'
+filetypes = 'json'
+
+[[plugins]]
+repository = 'marijnh/tern_for_vim'
+filetypes = 'javascript'
+
+[[plugins]]
+repository = 'https://bitbucket.org/kovisoft/slimv'
+filetypes = ['lisp', 'scheme']
+type = 'hg'
