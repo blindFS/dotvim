@@ -181,7 +181,8 @@
 "-----------------------------------------------------------------
 " appearance
 "-----------------------------------------------------------------
-    NeoBundle 'bling/vim-airline'
+    NeoBundle 'vim-airline/vim-airline'
+    NeoBundle 'vim-airline/vim-airline-themes'
     NeoBundle 'ryanoasis/vim-devicons', {
                 \ 'disabled' : !has('gui_running')
                 \ }
@@ -293,7 +294,7 @@
     NeoBundleLazy 'hynek/vim-python-pep8-indent', {
                 \ 'filetypes' : 'python',
                 \ }
-    NeoBundleLazy 'vimwiki/vimwiki', {
+    NeoBundleLazy 'blindFS/vimwiki', {
                 \ 'mappings' : '<Plug>Vimwiki'
                 \ }
     NeoBundleLazy 'gerw/vim-latex-suite', {
