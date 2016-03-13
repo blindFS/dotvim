@@ -74,4 +74,15 @@ options word
     {% highlight ${1:language} %}
     ${2}
     {% endhighlight %}
-    ${3}
+
+snippet codeblock
+abbr `cb`
+options word
+    {% codeblock lang:${1:language} %}
+    ${2}
+    {% endcodeblock %}
+
+snippet more
+abbr `mr`
+options word
+    <!-- more -->
